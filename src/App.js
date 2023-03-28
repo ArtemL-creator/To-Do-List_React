@@ -50,7 +50,8 @@ export class App extends React.Component {
   handleChange = (idx) => {
     const arr = [...this.state.arr];
     arr[idx].flag = true;
-    this.setState({ arr: arr });
+    const znachenie = this.state.arr[idx].description;
+    this.setState({ arr: arr, kakayToShlypa: znachenie });
   };
 
   handleShlyapa = (e, idx) => {
@@ -62,6 +63,13 @@ export class App extends React.Component {
     } else {
       this.setState({ kakayToShlypa: e.target.value });
     }
+  };
+
+  handleShlyapa2 = (e, idx) => {
+    const arr = [...this.state.arr];
+    arr[idx].flag = false;
+    arr[idx].description = e.target.value;
+    this.setState({ arr: arr, kakayToShlypa: "" });
   };
 
   render() {
@@ -102,7 +110,9 @@ export class App extends React.Component {
                   <input
                     onKeyDown={(e) => this.handleShlyapa(e, idx)}
                     onChange={(e) => this.handleShlyapa(e, idx)}
+                    onBlur={(e) => this.handleShlyapa2(e, idx)}
                     value={this.state.kakayToShlypa}
+                    autoFocus
                   />
                 )}
                 {el.dateDay} {el.dateTime}
