@@ -4,7 +4,8 @@ import "./styles.css";
 export class App extends React.Component {
   state = {
     day: "",
-    date: "",
+    dateStart: "",
+    dateEnd: "",
     title: "",
     description: "",
     arr: [],
@@ -12,8 +13,12 @@ export class App extends React.Component {
     descValue: ""
   };
 
-  handleDate = (e) => {
-    this.setState({ date: e.target.value });
+  handleDateStart = (e) => {
+    this.setState({ dateStart: e.target.value });
+  };
+
+  handleDateEnd = (e) => {
+    this.setState({ dateEnd: e.target.value });
   };
 
   handleTitle = (e) => {
@@ -31,27 +36,31 @@ export class App extends React.Component {
   handleAdd = () => {
     const array = [...this.state.arr];
 
-    const dateDay = this.state.date.split("T")[0];
-    const dateTime = this.state.date.split("T")[1];
+    const dateDayStart = this.state.dateStart.split("T")[0];
+    const dateTimeStart = this.state.dateStart.split("T")[1];
+    const dateDayEnd = this.state.dateEnd.split("T")[0];
+    const dateTimeEnd = this.state.dateEnd.split("T")[1];
     const title = this.state.title;
     const description = this.state.description;
 
     array.push({
-      dateDay: dateDay,
-      dateTime: dateTime,
+      dateDayStart: dateDayStart,
+      dateTimeStart: dateTimeStart,
+      dateDayEnd: dateDayEnd,
+      dateTimeEnd: dateTimeEnd,
       title: title,
       description: description,
       flag: false
     });
 
-    this.setState({ date: "", title: "", description: "", arr: array });
+    this.setState({ dateStart: "", dateEnd: "", title: "", description: "", arr: array });
   };
 
   handleChange = (idx) => {
     const arr = [...this.state.arr];
     arr[idx].flag = true;
-    const znachenie = this.state.arr[idx].description;
-    this.setState({ arr: arr, descValue: znachenie });
+    const val = this.state.arr[idx].description;
+    this.setState({ arr: arr, descValue: val });
   };
 
   handleAcceptChanges = (e, idx) => {
@@ -84,11 +93,18 @@ export class App extends React.Component {
           onChange={this.handleDescription}
         />{" "}
         <br />
-        Выбранная дата :
+        Начало :
         <input
           type="datetime-local"
-          onChange={this.handleDate}
-          value={this.state.date}
+          onChange={this.handleDateStart}
+          value={this.state.dateStart}
+        />{" "}
+        <br />
+        Конец :
+        <input
+          type="datetime-local"
+          onChange={this.handleDateEnd}
+          value={this.state.dateEnd}
         />{" "}
         <br />
         <button onClick={this.handleAdd}> Добавить задачу </button> <br />
@@ -96,7 +112,7 @@ export class App extends React.Component {
         Списочек задач: <br />
         {this.state.arr.map((el, idx) => (
           <div>
-            {(String(el.dateDay) === String(this.state.day) ||
+            {(String(el.dateDayStart) === String(this.state.day) ||
               String(this.state.day) === "") && (
               <div>
                 <h2>{el.title}</h2>
@@ -115,7 +131,7 @@ export class App extends React.Component {
                     autoFocus
                   />
                 )}
-                {el.dateDay} {el.dateTime}
+                Начало : {el.dateDayStart} {el.dateTimeStart} Конец : {el.dateDayEnd} {el.dateTimeEnd}
               </div>
             )}
           </div>
