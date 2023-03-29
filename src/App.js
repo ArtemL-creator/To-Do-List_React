@@ -9,7 +9,7 @@ export class App extends React.Component {
     description: "",
     arr: [],
     flag: false,
-    kakayToShlypa: ""
+    descValue: ""
   };
 
   handleDate = (e) => {
@@ -51,25 +51,25 @@ export class App extends React.Component {
     const arr = [...this.state.arr];
     arr[idx].flag = true;
     const znachenie = this.state.arr[idx].description;
-    this.setState({ arr: arr, kakayToShlypa: znachenie });
+    this.setState({ arr: arr, descValue: znachenie });
   };
 
-  handleShlyapa = (e, idx) => {
+  handleAcceptChanges = (e, idx) => {
     if (e.keyCode === 13) {
       const arr = [...this.state.arr];
       arr[idx].flag = false;
       arr[idx].description = e.target.value;
-      this.setState({ arr: arr, kakayToShlypa: "" });
+      this.setState({ arr: arr, descValue: "" });
     } else {
-      this.setState({ kakayToShlypa: e.target.value });
+      this.setState({ descValue: e.target.value });
     }
   };
 
-  handleShlyapa2 = (e, idx) => {
+  handleAcceptChanges2 = (e, idx) => {
     const arr = [...this.state.arr];
     arr[idx].flag = false;
     arr[idx].description = e.target.value;
-    this.setState({ arr: arr, kakayToShlypa: "" });
+    this.setState({ arr: arr, descValue: "" });
   };
 
   render() {
@@ -108,10 +108,10 @@ export class App extends React.Component {
                 )}
                 {el.flag && (
                   <input
-                    onKeyDown={(e) => this.handleShlyapa(e, idx)}
-                    onChange={(e) => this.handleShlyapa(e, idx)}
-                    onBlur={(e) => this.handleShlyapa2(e, idx)}
-                    value={this.state.kakayToShlypa}
+                    onKeyDown={(e) => this.handleAcceptChanges(e, idx)}
+                    onChange={(e) => this.handleAcceptChanges(e, idx)}
+                    onBlur={(e) => this.handleAcceptChanges2(e, idx)}
+                    value={this.state.descValue}
                     autoFocus
                   />
                 )}
