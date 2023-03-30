@@ -2,3 +2,88 @@
   font-family: sans-serif;
   text-align: center;
 }
+.flexStyle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 1px solid black;
+  height: 98vh;
+}
+.leftColumn {
+  width: 290px;
+  min-width: 200px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+}
+.rightColumn {
+  width: 360px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.header {
+  border: 1px solid black;
+  height: 60px;
+  display: flex;
+}
+.headerButton {
+  align-self: center;
+}
+.headerButtonStyle {
+  background: transparent;
+  border: none !important;
+}
+.footer {
+  height: 100px;
+  border: 1px solid black;
+  display: flex;
+}
+.leftColumnElem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+}
+.leftColumnElemIcon {
+  width: 35px;
+}
+.leftColumnElemCount {
+  width: 20px;
+}
+.leftColumnElemText {
+  flex-grow: 1;
+}
+.leftColumnCenter {
+  display: flex;
+  flex-direction: column;
+}
+.centerColumn {
+  flex-grow: 1;
+}
+.centerColumnHeader {
+  border: 1px solid black;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+.centerColumnHeaderIcon {
+  width: 100px;
+  align-self: center;
+  flex-grow: 1;
+}
+.centerColumnSortDiv {
+  width: 120px;
+  align-self: center;
+}
+.rightColumnFooterButtonDiv {
+  width: 20px;
+  align-self: center;
+}
+.sortContexMenu {
+  width: 130px;
+  height: 80px;
+  border: 1px solid black;
+}
