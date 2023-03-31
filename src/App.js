@@ -14,13 +14,13 @@ export class App extends React.Component {
     flag: false,
     descValue: "",
     finishedCount: 0, // мой день, важно, неважно
-    flagShit: false // сюда флаги позже раньше, для завершенных два вида
+    flagS: false // сюда флаги позже раньше, для завершенных два вида
   };
 
-  // state.day.huinya; // забрать хуйню из вложенного объекта
+  // state.day.huinya; // забрать из вложенного объекта
   // state.arr; // забираешь массив из state
   // state.arr[1]; // забираешь объект из массива
-  // state.arr[1].huinya // забираешь значение поля из объекта массива;
+  // state.arr[1].h // забираешь значение поля из объекта массива;
 
   handleDateStart = (e) => {
     this.setState({ dateStart: e.target.value });
@@ -97,7 +97,7 @@ export class App extends React.Component {
 
     //console.log(arr[0].dateDayStart);
     if (today === arr[0].dateDayStart) {
-      //console.log("ЧВК")
+      //console.log("...")
     }
 
     finished = this.state.arr.filter(
@@ -169,8 +169,7 @@ export class App extends React.Component {
         {finished = this.state.arr.filter(
           (el) => String(el.dateDay) === String(new Date().getDay())
         ).length}
-        /// ленгс всегда ебашить, а тоже самое без ленгс если кнопка нажата ////
-        filter сюда ебашшш // задачу надо в отдельный класс с пропсами
+
       </div>
     );
   }

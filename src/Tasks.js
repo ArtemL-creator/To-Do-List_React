@@ -1,5 +1,4 @@
 import React from "react";
-import { createElement } from "react";
 import "./styles.css";
 
 export class Tasks extends React.Component {
@@ -116,7 +115,7 @@ export class Tasks extends React.Component {
             {
                 title: "Десять",
                 description: "пнуш",
-                start: "2023-02-09",
+                start: "2023-04-09",
                 finish: "2023-04-20",
                 category: "Purple",
                 isImportant: false,
@@ -147,47 +146,79 @@ export class Tasks extends React.Component {
         console.log(inTheWeek);
 
         let arrEarlier = this.state.tasks.filter(
-            (el) => el.start < today.toISOString().split("T")[0]
+            (el) => (el.start.slice(0, 10) < today.toISOString().split("T")[0])
         );
 
         console.log("Раньше:" + arrEarlier.length);
 
         let arrToday = this.state.tasks.filter(
-            (el) => el.start === today.toISOString().split("T")[0]
+            (el) => (el.start.slice(0, 10) === today.toISOString().split("T")[0])
         );
 
         console.log("Сегодня:" + arrToday.length);
 
         let arrTomorrow = this.state.tasks.filter(
-            (el) => el.start === tomorrow.toISOString().split("T")[0]
+            (el) => (el.start.slice(0, 10) === tomorrow.toISOString().split("T")[0])
         );
 
         console.log("Завтра:" + arrTomorrow.length);
 
         let arrAfterTomorrow = this.state.tasks.filter(
-            (el) => el.start === afterTomorrow.toISOString().split("T")[0]
+            (el) => (el.start.slice(0, 10) === afterTomorrow.toISOString().split("T")[0])
         );
 
         console.log("Послезавтра:" + arrAfterTomorrow.length);
 
         let arrInTheWeek = this.state.tasks.filter(
-            (el) => (el.start > afterTomorrow.toISOString().split("T")[0] && el.start <= inTheWeek.toISOString().split("T"[0]))
+            (el) => (el.start.slice(0, 10) > afterTomorrow.toISOString().split("T")[0] && el.start <= inTheWeek.toISOString().split("T"[0]))
         );
 
         console.log("На следующие 7 дней:" + arrInTheWeek.length);
 
         let arrLater = this.state.tasks.filter(
-            (el) => (el.start > inTheWeek.toISOString().split("T"[0]))
+            (el) => (el.start.slice(0, 10) > inTheWeek.toISOString().split("T"[0]))
         );
 
         console.log("Позже:" + arrLater.length);
 
 
+        function mounth(value) {
+            switch (value + 1) {
+                case 1: return 'января';
+                    break;
+                case 2: return 'февраля';
+                    break;
+                case 3: return 'марта';
+                    break;
+                case 4: return 'апреля';
+                    break;
+                case 5: return 'мая';
+                    break;
+                case 6: return 'июня';
+                    break;
+                case 7: return 'июля';
+                    break;
+                case 8: return 'августа';
+                    break;
+                case 9: return 'сентября';
+                    break;
+                case 10: return 'октября';
+                    break;
+                case 11: return 'ноября';
+                    break;
+                case 12: return 'декабря';
+                    break;
+                default:
+                    console.log("чё-то не то");
+            }
+        }
 
         function wrapper(arr) {
             let arrDiv = []
             arr.forEach((el, i) => {
-                arrDiv[i] = <div><p>{el.title} <br />хех</p>{el.start}</div>;
+                let DateObjStart = new Date(el.start);
+                let DateObjFinish = new Date(el.finish);
+                arrDiv[i] = <div><p>{el.title} <br />Начало: {DateObjStart.getUTCDate()} {mounth(DateObjStart.getUTCMonth())} в {DateObjStart.toLocaleTimeString().slice(0, 5)} / Конец: {DateObjFinish.getUTCDate()} {mounth(DateObjFinish.getUTCMonth())} в {DateObjStart.toLocaleTimeString().slice(0, 5)}</p></div>;
             })
             console.log(arrDiv);
             return arrDiv;
@@ -196,9 +227,18 @@ export class Tasks extends React.Component {
 
         return (
             <div>
-                {arrEarlier.length}
-                <br />
+                <div>Раньше : {arrEarlier.length}</div>
                 {wrapper(arrEarlier)}
+                <div>Сегодня : {arrToday.length}</div>
+                {wrapper(arrToday)}
+                <div>Завтра : {arrTomorrow.length}</div>
+                {wrapper(arrTomorrow)}
+                <div>Послезавтра : {arrAfterTomorrow.length}</div>
+                {wrapper(arrAfterTomorrow)}
+                <div>На следующие 7 дней : {arrInTheWeek.length}</div>
+                {wrapper(arrInTheWeek)}
+                <div>Позже : {arrLater.length}</div>
+                {wrapper(arrLater)}
             </div>
         );
     }
