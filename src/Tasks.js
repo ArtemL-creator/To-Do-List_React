@@ -31,8 +31,8 @@ export class Tasks extends React.Component {
             {
                 title: "Три",
                 description: "йарш",
-                start: "2023-03-30",
-                finish: "2023-03-30",
+                start: "2023-03-31",
+                finish: "2023-03-31",
                 category: "Blue",
                 isImportant: false,
                 isComplete: false,
@@ -43,7 +43,7 @@ export class Tasks extends React.Component {
             {
                 title: "Четыре",
                 description: "хлыб",
-                start: "2023-03-30",
+                start: "2023-03-31",
                 finish: "2023-03-31",
                 category: "Purple",
                 isImportant: false,
@@ -55,8 +55,8 @@ export class Tasks extends React.Component {
             {
                 title: "Пять",
                 description: "рэнад",
-                start: "2023-03-31",
-                finish: "2023-03-31",
+                start: "2023-04-01",
+                finish: "2023-04-01",
                 category: "Red",
                 isImportant: false,
                 isComplete: false,
@@ -67,8 +67,8 @@ export class Tasks extends React.Component {
             {
                 title: "Шесть",
                 description: "цзуй",
-                start: "2023-03-31",
-                finish: "2023-04-01",
+                start: "2023-04-01",
+                finish: "2023-04-02",
                 category: "Green",
                 isImportant: false,
                 isComplete: false,
@@ -91,8 +91,8 @@ export class Tasks extends React.Component {
             {
                 title: "Восемь",
                 description: "жня",
-                start: "2023-04-03",
-                finish: "2023-04-03",
+                start: "2023-04-02",
+                finish: "2023-04-02",
                 category: "Yellow",
                 isImportant: false,
                 isComplete: false,
@@ -103,7 +103,7 @@ export class Tasks extends React.Component {
             {
                 title: "Девять",
                 description: "хщет",
-                start: "2023-04-20",
+                start: "2023-04-06",
                 finish: "2023-04-20",
                 category: "Blue",
                 isImportant: false,
@@ -115,7 +115,7 @@ export class Tasks extends React.Component {
             {
                 title: "Десять",
                 description: "пнуш",
-                start: "2023-04-21",
+                start: "2023-04-09",
                 finish: "2023-04-20",
                 category: "Purple",
                 isImportant: false,
@@ -131,20 +131,62 @@ export class Tasks extends React.Component {
     }
 
     render() {
-        {
-            const arr = [...this.state.tasks];
-            console.log(arr.length);
-            const today = new Date().toISOString().split("T")[0];
-            console.log(today);
 
-            console.log(arr[0].start);
-            console.log(arr[1].start);
-            console.log(arr[2].start);
-            if (today === arr[2].start) {
-                console.log("ЧВК")
-            }
+        const today = new Date();
+        const tomorrow = new Date(today);
+        tomorrow.setDate(today.getDate() + 1);
+        const afterTomorrow = new Date(tomorrow);
+        afterTomorrow.setDate(tomorrow.getDate() + 1);
+        const inTheWeek = new Date(afterTomorrow);
+        inTheWeek.setDate(afterTomorrow.getDate() + 6);
+        //const arr = [...this.state.tasks];
+        //console.log(arr.length);
+        console.log(today);
+        console.log(tomorrow);
+        console.log(afterTomorrow);
+        console.log(inTheWeek);
 
-        }
-        return (true)
+        let arrEarlier = this.state.tasks.filter(
+            (el) => el.start < today.toISOString().split("T")[0]
+        );
+
+        console.log("Раньше:" + arrEarlier.length);
+
+        let arrToday = this.state.tasks.filter(
+            (el) => el.start === today.toISOString().split("T")[0]
+        );
+
+        console.log("Сегодня:" + arrToday.length);
+
+        let arrTomorrow = this.state.tasks.filter(
+            (el) => el.start === tomorrow.toISOString().split("T")[0]
+        );
+
+        console.log("Завтра:" + arrTomorrow.length);
+
+        let arrAfterTomorrow = this.state.tasks.filter(
+            (el) => el.start === afterTomorrow.toISOString().split("T")[0]
+        );
+
+        console.log("Послезавтра:" + arrAfterTomorrow.length);
+
+        let arrInTheWeek = this.state.tasks.filter(
+            (el) => (el.start > afterTomorrow.toISOString().split("T")[0] && el.start < inTheWeek.toISOString().split("T"[0]))
+        );
+
+        console.log("На следующие 7 дней:" + arrInTheWeek.length);
+
+        let arrLater = this.state.tasks.filter(
+            (el) => (el.start > inTheWeek.toISOString().split("T"[0]))
+        );
+
+        console.log("Позже:" + arrLater.length);
+
+
+        return (
+            <div>
+                {today.toISOString().split("T")[0]}
+            </div>
+        );
     }
 }

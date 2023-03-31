@@ -93,18 +93,18 @@ export class App extends React.Component {
   handleFilter = () => {
     const arr = [...this.state.arr];
     const today = new Date().toISOString().split("T")[0];
-    console.log(today);
+    //console.log(today);
 
-    console.log(arr[0].dateDayStart);
+    //console.log(arr[0].dateDayStart);
     if (today === arr[0].dateDayStart) {
-      console.log("ЧВК")
+      //console.log("ЧВК")
     }
 
     finished = this.state.arr.filter(
       (el) => el.dateDay === today
     );
 
-    console.log(finished);
+    //console.log(finished);
   };
 
   render() {
