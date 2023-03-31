@@ -1,4 +1,5 @@
 import React from "react";
+import { createElement } from "react";
 import "./styles.css";
 
 export class Tasks extends React.Component {
@@ -103,7 +104,7 @@ export class Tasks extends React.Component {
             {
                 title: "Девять",
                 description: "хщет",
-                start: "2023-04-06",
+                start: "2023-04-08",
                 finish: "2023-04-20",
                 category: "Blue",
                 isImportant: false,
@@ -115,7 +116,7 @@ export class Tasks extends React.Component {
             {
                 title: "Десять",
                 description: "пнуш",
-                start: "2023-04-09",
+                start: "2023-02-09",
                 finish: "2023-04-20",
                 category: "Purple",
                 isImportant: false,
@@ -139,8 +140,7 @@ export class Tasks extends React.Component {
         afterTomorrow.setDate(tomorrow.getDate() + 1);
         const inTheWeek = new Date(afterTomorrow);
         inTheWeek.setDate(afterTomorrow.getDate() + 6);
-        //const arr = [...this.state.tasks];
-        //console.log(arr.length);
+
         console.log(today);
         console.log(tomorrow);
         console.log(afterTomorrow);
@@ -171,7 +171,7 @@ export class Tasks extends React.Component {
         console.log("Послезавтра:" + arrAfterTomorrow.length);
 
         let arrInTheWeek = this.state.tasks.filter(
-            (el) => (el.start > afterTomorrow.toISOString().split("T")[0] && el.start < inTheWeek.toISOString().split("T"[0]))
+            (el) => (el.start > afterTomorrow.toISOString().split("T")[0] && el.start <= inTheWeek.toISOString().split("T"[0]))
         );
 
         console.log("На следующие 7 дней:" + arrInTheWeek.length);
@@ -183,9 +183,22 @@ export class Tasks extends React.Component {
         console.log("Позже:" + arrLater.length);
 
 
+
+        function wrapper(arr) {
+            let arrDiv = []
+            arr.forEach((el, i) => {
+                arrDiv[i] = <div><p>{el.title} <br />хех</p>{el.start}</div>;
+            })
+            console.log(arrDiv);
+            return arrDiv;
+        };
+
+
         return (
             <div>
-                {today.toISOString().split("T")[0]}
+                {arrEarlier.length}
+                <br />
+                {wrapper(arrEarlier)}
             </div>
         );
     }
