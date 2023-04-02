@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles.css";
 
 export class Tasks extends React.Component {
+
     state = {
         tasks: [
             {
@@ -125,10 +126,19 @@ export class Tasks extends React.Component {
                 ]
             }
         ],
+        show: false,
         sortCode: 1 - 3,
         groupCode: 1 - 4,
         poUbyvanyu: true
-    }
+    };
+
+    /* isShow = () => {
+        const [show, setShow] = useState(false);
+    }; */
+
+    isShow = (e) => {
+        this.setState({ show: !e.target.value });
+    };
 
     render() {
 
@@ -211,7 +221,7 @@ export class Tasks extends React.Component {
                 default:
                     console.log("чё-то не то");
             }
-        }
+        };
 
         function wrapper(arr) {
             let arrDiv = []
@@ -224,11 +234,15 @@ export class Tasks extends React.Component {
             return arrDiv;
         };
 
+        function isShow() {
+            const [show, setShow] = useState(false);
+        }
 
         return (
+
             <div>
-                <div>Раньше : {arrEarlier.length}</div>
-                {wrapper(arrEarlier)}
+                <div><button onClick={() => this.setState({ show: !this.state.show })}>{">"}</button>Раньше : {arrEarlier.length}</div>
+                {this.state.show ? wrapper(arrEarlier) : null}
                 <div>Сегодня : {arrToday.length}</div>
                 {wrapper(arrToday)}
                 <div>Завтра : {arrTomorrow.length}</div>
