@@ -241,7 +241,22 @@ export class Tasks extends React.Component {
         return (
 
             <div>
-                <div><button onClick={() => this.setState({ show: !this.state.show })}>{">"}</button>Раньше : {arrEarlier.length}</div>
+                <div onClick={() => this.setState({ show: !this.state.show })}><svg
+                width="30"
+                height="20"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="0"
+                  y="0"
+                  width="20"
+                  height="20"
+                  stroke="black"
+                  fill="transparent"
+                  strokeWidth="5"
+                />
+              </svg>Раньше : {arrEarlier.length}</div>
                 {this.state.show ? wrapper(arrEarlier) : null}
                 <div>Сегодня : {arrToday.length}</div>
                 {wrapper(arrToday)}
