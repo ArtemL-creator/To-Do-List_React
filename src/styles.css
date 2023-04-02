@@ -2,3 +2,35 @@
   font-family: sans-serif;
   text-align: center;
 }
+
+.centerElem {
+  display: block;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+}
+
+.centerElemIcon {
+ 
+}
+
+
+
+.centerElemText {
+ margin-right: 1px;
+}
+
+.centerElemCount {
+  margin-left: .85em;
+}
+
+.cenElem{
+  display: flex;
+}
+
+.taskCard {
+  display: flex;
+  align-items: baseline;
+  padding: 8px 8px;
+}

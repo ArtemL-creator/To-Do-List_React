@@ -68,8 +68,8 @@ export class Tasks extends React.Component {
             {
                 title: "Шесть",
                 description: "цзуй",
-                start: "2023-04-01",
-                finish: "2023-04-02",
+                start: "2023-04-04",
+                finish: "2023-04-04",
                 category: "Green",
                 isImportant: false,
                 isComplete: false,
@@ -80,8 +80,8 @@ export class Tasks extends React.Component {
             {
                 title: "Семь",
                 description: "абик",
-                start: "2023-04-01",
-                finish: "2023-04-01",
+                start: "2023-04-03",
+                finish: "2023-04-03",
                 category: "Orange",
                 isImportant: false,
                 isComplete: false,
@@ -126,19 +126,21 @@ export class Tasks extends React.Component {
                 ]
             }
         ],
-        show: false,
+        showEarlier: false,
+        showToday: true,
+        showTomorrow: false,
+        showAfterTomorrow: false,
+        showInTheWeek: false,
+        showLater: false,
+
         sortCode: 1 - 3,
         groupCode: 1 - 4,
         poUbyvanyu: true
     };
 
-    /* isShow = () => {
-        const [show, setShow] = useState(false);
+    /* isShowEarlier = (e) => {
+        this.setState({ showEarlier: !e.target.value });
     }; */
-
-    isShow = (e) => {
-        this.setState({ show: !e.target.value });
-    };
 
     render() {
 
@@ -234,40 +236,120 @@ export class Tasks extends React.Component {
             return arrDiv;
         };
 
-        function isShow() {
-            const [show, setShow] = useState(false);
-        }
-
         return (
 
-            <div>
-                <div onClick={() => this.setState({ show: !this.state.show })}><svg
-                width="30"
-                height="20"
-                version="1.1"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  x="0"
-                  y="0"
-                  width="20"
-                  height="20"
-                  stroke="black"
-                  fill="transparent"
-                  strokeWidth="5"
-                />
-              </svg>Раньше : {arrEarlier.length}</div>
-                {this.state.show ? wrapper(arrEarlier) : null}
-                <div>Сегодня : {arrToday.length}</div>
-                {wrapper(arrToday)}
-                <div>Завтра : {arrTomorrow.length}</div>
-                {wrapper(arrTomorrow)}
-                <div>Послезавтра : {arrAfterTomorrow.length}</div>
-                {wrapper(arrAfterTomorrow)}
-                <div>На следующие 7 дней : {arrInTheWeek.length}</div>
-                {wrapper(arrInTheWeek)}
-                <div>Позже : {arrLater.length}</div>
-                {wrapper(arrLater)}
+            <div class="centerElem">
+
+                <div >
+                    <button onClick={() => this.setState({ showEarlier: !this.state.showEarlier })}>{this.state.showEarlier ? '∨' : '>'}</button>
+                    Раньше : {arrEarlier.length}
+                </div>
+                {this.state.showEarlier ? wrapper(arrEarlier) : null}
+
+                <div>
+                    <button onClick={() => this.setState({ showToday: !this.state.showToday })}>{this.state.showToday ? '∨' : '>'}</button>
+                    Сегодня : {arrToday.length}
+                </div>
+                {this.state.showToday ? wrapper(arrToday) : null}
+
+                <div onClick={() => this.setState({ showTomorrow: !this.state.showTomorrow })}>
+                    <div class="centerElemIcon">
+                        <svg
+                            width="30"
+                            height="20"
+                            version="1.1"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <rect
+                                x="0"
+                                y="0"
+                                width="20"
+                                height="20"
+                                stroke="black"
+                                fill="transparent"
+                                strokeWidth="5"
+                            />
+                        </svg>
+                    </div>
+                    <div class="centerElemText">Завтра : </div>
+                    <div class="centerElemCount">{arrTomorrow.length}</div>
+                </div>
+                {this.state.showTomorrow ? wrapper(arrTomorrow) : null}
+
+                <div class="cenElem" onClick={() => this.setState({ showAfterTomorrow: !this.state.showAfterTomorrow })}>
+                    <div class="centerElemIcon">
+                        <svg
+                            width="30"
+                            height="20"
+                            version="1.1"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <rect
+                                x="0"
+                                y="0"
+                                width="20"
+                                height="20"
+                                stroke="black"
+                                fill="transparent"
+                                strokeWidth="5"
+                            />
+                        </svg>
+                    </div>
+                    <div class="taskCard">
+                        <div class="centerElemText">Послезавтра : {" "}</div>
+                        <div class="centerElemCount">{arrAfterTomorrow.length}</div>
+                    </div>
+
+                </div>
+                {this.state.showAfterTomorrow ? wrapper(arrAfterTomorrow) : null}
+
+                <div onClick={() => this.setState({ showInTheWeek: !this.state.showInTheWeek })}>
+                    <div class="centerElemIcon">
+                        <svg
+                            width="30"
+                            height="20"
+                            version="1.1"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <rect
+                                x="0"
+                                y="0"
+                                width="20"
+                                height="20"
+                                stroke="black"
+                                fill="transparent"
+                                strokeWidth="5"
+                            />
+                        </svg>
+                    </div>
+                    <div class="centerElemText">На следующие 7 дней : </div>
+                    <div class="centerElemCount">{arrInTheWeek.length}</div>
+                </div>
+                {this.state.showInTheWeek ? wrapper(arrInTheWeek) : null}
+
+                <div onClick={() => this.setState({ showLater: !this.state.showLater })}>
+                    <div class="centerElemIcon">
+                        <svg
+                            width="30"
+                            height="20"
+                            version="1.1"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <rect
+                                x="0"
+                                y="0"
+                                width="20"
+                                height="20"
+                                stroke="black"
+                                fill="transparent"
+                                strokeWidth="5"
+                            />
+                        </svg>
+                    </div>
+                    <div class="centerElemText">Позже : </div>
+                    <div class="centerElemCount">{arrLater.length}</div>
+                </div>
+                {this.state.showLater ? wrapper(arrLater) : null}
             </div>
         );
     }
