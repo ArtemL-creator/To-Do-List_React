@@ -4,18 +4,19 @@
 }
 
 .centerElem {
+  overflow: hidden;
   display: block;
-  flex-direction: row;
-  justify-content: space-between;
+  z-index: 1;
+}
+
+.taskCard-Actions{
+  display: flex;
   align-items: center;
-  height: 50px;
+  overflow: hidden;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
 }
-
-.centerElemIcon {
- 
-}
-
-
 
 .centerElemText {
  margin-right: 1px;
@@ -25,7 +26,7 @@
   margin-left: .85em;
 }
 
-.cenElem{
+.centerElem-taskCard{
   display: flex;
 }
 

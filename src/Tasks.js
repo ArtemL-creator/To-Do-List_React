@@ -239,118 +239,72 @@ export class Tasks extends React.Component {
         return (
 
             <div class="centerElem">
-
-                <div >
-                    <button onClick={() => this.setState({ showEarlier: !this.state.showEarlier })}>{this.state.showEarlier ? '∨' : '>'}</button>
-                    Раньше : {arrEarlier.length}
+                <div class="centerElem-taskCard" onClick={() => this.setState({ showEarlier: !this.state.showEarlier })}>
+                    <div class="taskCard-Actions">
+                        <button>{this.state.showEarlier ? '∨' : '>'}</button>
+                    </div>
+                    <div class="taskCard">
+                        <div class="centerElemText">Раньше : </div>
+                        <div class="centerElemCount">{arrEarlier.length}</div>
+                    </div>
                 </div>
                 {this.state.showEarlier ? wrapper(arrEarlier) : null}
 
-                <div>
-                    <button onClick={() => this.setState({ showToday: !this.state.showToday })}>{this.state.showToday ? '∨' : '>'}</button>
-                    Сегодня : {arrToday.length}
+                <div class="centerElem-taskCard" onClick={() => this.setState({ showToday: !this.state.showToday })}>
+                    <div class="taskCard-Actions">
+                        <button>{this.state.showToday ? '∨' : '>'}</button>
+                    </div>
+                    <div class="taskCard">
+                        <div class="centerElemText">Сегодня : </div>
+                        <div class="centerElemCount">{arrToday.length}</div>
+                    </div>
                 </div>
                 {this.state.showToday ? wrapper(arrToday) : null}
 
-                <div onClick={() => this.setState({ showTomorrow: !this.state.showTomorrow })}>
-                    <div class="centerElemIcon">
-                        <svg
-                            width="30"
-                            height="20"
-                            version="1.1"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <rect
-                                x="0"
-                                y="0"
-                                width="20"
-                                height="20"
-                                stroke="black"
-                                fill="transparent"
-                                strokeWidth="5"
-                            />
-                        </svg>
+                <div class="centerElem-taskCard" onClick={() => this.setState({ showTomorrow: !this.state.showTomorrow })}>
+                    <div class="taskCard-Actions">
+                        <button>{this.state.showTomorrow ? '∨' : '>'}</button>
                     </div>
-                    <div class="centerElemText">Завтра : </div>
-                    <div class="centerElemCount">{arrTomorrow.length}</div>
+                    <div class="taskCard">
+                        <div class="centerElemText">Завтра : </div>
+                        <div class="centerElemCount">{arrTomorrow.length}</div>
+                    </div>
                 </div>
                 {this.state.showTomorrow ? wrapper(arrTomorrow) : null}
 
-                <div class="cenElem" onClick={() => this.setState({ showAfterTomorrow: !this.state.showAfterTomorrow })}>
-                    <div class="centerElemIcon">
-                        <svg
-                            width="30"
-                            height="20"
-                            version="1.1"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <rect
-                                x="0"
-                                y="0"
-                                width="20"
-                                height="20"
-                                stroke="black"
-                                fill="transparent"
-                                strokeWidth="5"
-                            />
-                        </svg>
+                <div class="centerElem-taskCard" onClick={() => this.setState({ showAfterTomorrow: !this.state.showAfterTomorrow })}>
+                    <div class="taskCard-Actions">
+                        <button>{this.state.showAfterTomorrow ? '∨' : '>'}</button>
                     </div>
                     <div class="taskCard">
-                        <div class="centerElemText">Послезавтра : {" "}</div>
+                        <div class="centerElemText">Послезавтра : </div>
                         <div class="centerElemCount">{arrAfterTomorrow.length}</div>
                     </div>
-
                 </div>
                 {this.state.showAfterTomorrow ? wrapper(arrAfterTomorrow) : null}
 
-                <div onClick={() => this.setState({ showInTheWeek: !this.state.showInTheWeek })}>
-                    <div class="centerElemIcon">
-                        <svg
-                            width="30"
-                            height="20"
-                            version="1.1"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <rect
-                                x="0"
-                                y="0"
-                                width="20"
-                                height="20"
-                                stroke="black"
-                                fill="transparent"
-                                strokeWidth="5"
-                            />
-                        </svg>
+                <div class="centerElem-taskCard" onClick={() => this.setState({ showInTheWeek: !this.state.showInTheWeek })}>
+                    <div class="taskCard-Actions">
+                        <button>{this.state.showInTheWeek ? '∨' : '>'}</button>
                     </div>
-                    <div class="centerElemText">На следующие 7 дней : </div>
-                    <div class="centerElemCount">{arrInTheWeek.length}</div>
+                    <div class="taskCard">
+                        <div class="centerElemText">На следующие 7 дней : </div>
+                        <div class="centerElemCount">{arrInTheWeek.length}</div>
+                    </div>
                 </div>
                 {this.state.showInTheWeek ? wrapper(arrInTheWeek) : null}
 
-                <div onClick={() => this.setState({ showLater: !this.state.showLater })}>
-                    <div class="centerElemIcon">
-                        <svg
-                            width="30"
-                            height="20"
-                            version="1.1"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <rect
-                                x="0"
-                                y="0"
-                                width="20"
-                                height="20"
-                                stroke="black"
-                                fill="transparent"
-                                strokeWidth="5"
-                            />
-                        </svg>
+                <div class="centerElem-taskCard" onClick={() => this.setState({ showLater: !this.state.showLater })}>
+                    <div class="taskCard-Actions">
+                        <button>{this.state.showLater ? '∨' : '>'}</button>
                     </div>
-                    <div class="centerElemText">Позже : </div>
-                    <div class="centerElemCount">{arrLater.length}</div>
+                    <div class="taskCard">
+                        <div class="centerElemText">Позже : </div>
+                        <div class="centerElemCount">{arrLater.length}</div>
+                    </div>
                 </div>
                 {this.state.showLater ? wrapper(arrLater) : null}
-            </div>
+            </div >
         );
     }
 }
