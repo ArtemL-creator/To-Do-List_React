@@ -43,19 +43,25 @@ export class LeftColumn extends React.Component {
         </div>
         <div className="leftColumnCenter">
           <div onClick={handleTodayTask}>
-            <LeftColumnElem name={"Сегодняшние задачи"} count={20} />
+            <LeftColumnElem
+              name={"Сегодняшние задачи"}
+              count={todayTaskCount}
+            />
           </div>
 
           <div onClick={handleImportantTask}>
-            <LeftColumnElem name={"Важные задачи"} count={20} />
+            <LeftColumnElem name={"Важные задачи"} count={importantTaskCount} />
           </div>
 
           <div onClick={handlePlanedTask}>
-            <LeftColumnElem name={"Запланированные задачи"} count={20} />
+            <LeftColumnElem
+              name={"Запланированные задачи"}
+              count={planedTaskCount}
+            />
           </div>
 
           <div onClick={handleAllTask}>
-            <LeftColumnElem name={"Все задачи"} count={20} />
+            <LeftColumnElem name={"Все задачи"} count={allTaskCount} />
           </div>
         </div>
       </div>
