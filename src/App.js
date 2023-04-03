@@ -1158,7 +1158,7 @@ export class App extends React.Component {
                   width: "80%"
                 }}
               >
-                <input
+                <input className="data"
                   style={{
                     marginTop: 10,
                     height: "80%",
@@ -1181,16 +1181,16 @@ export class App extends React.Component {
               >
                 <div>
                   <div>
-                    Дата старта :
-                    <input
+                    <h className="h"> Дата старта :</h>
+                    <input className="data-1"
                       type="datetime-local"
                       onChange={this.selectStartDateHandler}
                       value={this.state.currentTaskStart}
                     />
                   </div>
                   <div>
-                    Дата конца :
-                    <input
+                   <h className="h">Дата конца :</h> 
+                    <input className="data-1"
                       type="datetime-local"
                       value={this.state.currentTaskEnd}
                       onChange={this.selectEndDateHandler}
@@ -1199,7 +1199,7 @@ export class App extends React.Component {
                 </div>
                 <div>
                   {isAddButtonActive && (
-                    <button onClick={this.addNewTaskHandler}> Добавить </button>
+                    <button className="custom-btn btn-6" onClick={this.addNewTaskHandler}> Добавить </button>
                   )}
                   {!isAddButtonActive && (
                     <button disabled={true}> Добавить </button>
