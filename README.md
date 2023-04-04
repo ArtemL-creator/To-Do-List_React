@@ -1,5 +1,7 @@
 # To-Do-List_React
-
+---
+permalink: /index.html
+---
 ---
 permalink: /public/index.html
 ---
