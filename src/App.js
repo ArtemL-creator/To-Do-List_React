@@ -331,7 +331,7 @@ export class App extends React.Component {
       var curEnd = new Date(this.state.currentTaskEnd);
 
       if (curEnd <= curStart) {
-        alert("Дата начала задачи позже даты конца");
+        alert("Время начала задачи позже времени конца");
         return;
       }
 
@@ -354,7 +354,7 @@ export class App extends React.Component {
       var curStart = new Date(this.state.currentTaskStart);
 
       if (curEnd <= curStart) {
-        alert("Дата начала задачи позже даты конца");
+        alert("Время начала задачи позже времени конца");
         return;
       }
 
@@ -1403,7 +1403,7 @@ export class App extends React.Component {
                   }}
                 >
                   <div style={{ width: "80%", marginTop: 10 }}>
-                    Дата начала:
+                    Старт задачи:
                   </div>
                   <div style={{ width: "80%" }}>
                     <input
@@ -1413,7 +1413,7 @@ export class App extends React.Component {
                       onChange={(e) => this.editStartDateHandler(e)}
                     />
                   </div>
-                  <div style={{ width: "80%", marginTop: 10 }}>Дата конца:</div>
+                  <div style={{ width: "80%", marginTop: 10 }}>Конец задачи:</div>
                   <div style={{ width: "80%" }}>
                     <input
                       style={{ width: "100%" }}
