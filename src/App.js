@@ -856,16 +856,9 @@ export class App extends React.Component {
 
   groupMapper = (arr) => {
     return arr.map((el) => (
-      <div
-        style={{
-          width: "80%",
-          display: "flex",
-          flexDirection: "column",
-          border: "1px solid black",
-          marginTop: 10
-        }}
+      <div class="tasks"
       >
-        <div onClick={() => this.rightColumnAddHandler(el.index)}>
+        <div class="desc" onClick={() => this.rightColumnAddHandler(el.index)}>
           <span>{this.state.tasks[el.index].title}</span>
         </div>
         <div style={{ display: "flex", flexGrow: 1, width: "100%" }}>
@@ -898,17 +891,19 @@ export class App extends React.Component {
               justifyContent: "space-between"
             }}
           >
-            <div>
-              {svgTaskSeparator}
-              {el.subtaskStatus}
-            </div>
-            <div>
-              {svgTaskSeparator}
-              {el.actual}
-            </div>
-            <div>
-              {svgTaskSeparator}
-              {el.category}
+            <div class="subDesc">
+              <div>
+                {svgTaskSeparator}
+                {el.subtaskStatus}
+              </div>
+              <div>
+                {svgTaskSeparator}
+                {el.actual}
+              </div>
+              <div>
+                {svgTaskSeparator}
+                {el.category}
+              </div>
             </div>
           </div>
         </div>
@@ -1135,11 +1130,11 @@ export class App extends React.Component {
                   style={{
                     marginTop: 10,
                     height: "80%",
-                    width: "100%"
+                    width: "100%",
                   }}
                   onChange={this.createTitleTaskHandler}
                   value={this.state.currentTaskTitle}
-                  placeholder="Дорогой друг, вводи сюда название задачи, партия максимально признательна тебе"
+                  placeholder="Дорогой друг, вводи, пожалуйста, сюда название задачи"
                 />
               </div>
 
