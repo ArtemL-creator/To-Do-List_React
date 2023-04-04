@@ -768,12 +768,12 @@ export class App extends React.Component {
   };
 
   deleteTaskHandler = () => {
-    let result = confirm("Удалить?");
-    const taskIdx = "", oldTasks = "", newTasks = ""
+    var result = confirm("Удалить?");
+    // const taskIdx = "", oldTasks = "", newTasks = ""
     if (result) {
-      taskIdx = this.state.currentTaskIdx;
-      oldTasks = [...this.state.tasks];
-      newTasks = [];
+      const taskIdx = this.state.currentTaskIdx;
+      const oldTasks = [...this.state.tasks];
+      const newTasks = [];
 
 
       for (var i = 0; i < oldTasks.length; i++) {
