@@ -4,39 +4,110 @@ import { LeftColumn } from "./LeftColumn";
 import { SortContextMenu } from "./SortContextMeny";
 import { SortSelector } from "./SortSelector";
 
-
 var counter = 0;
 
 const svg = (
   <svg width="30" height="20" xmlns="http://www.w3.org/2000/svg">
     <g id="Layer_1">
       <title>Layer 1</title>
-      <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_5" y2="4.65466" x2="25.51051" y1="4.83484" x1="2.92793" stroke="#000" fill="none" />
-      <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_6" y2="10.18018" x2="25.87087" y1="10.36036" x1="3.16817" stroke="#000" fill="none" />
-      <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_7" y2="11.8018" x2="27.07207" y1="11.74174" x1="27.07207" stroke="#000" fill="none" />
-      <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_8" y2="16.24625" x2="25.69069" y1="16.48649" x1="3.70871" stroke="#000" fill="none" />
-      <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_9" y2="5.37538" x2="36.2012" y1="5.37538" x1="36.26126" stroke="#000" fill="none" />
-      <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_10" y2="-3.21321" x2="34.75976" y1="-3.21321" x1="34.6997" stroke="#000" fill="none" />
+      <line
+        stroke-linecap="undefined"
+        stroke-linejoin="undefined"
+        id="svg_5"
+        y2="4.65466"
+        x2="25.51051"
+        y1="4.83484"
+        x1="2.92793"
+        stroke="#000"
+        fill="none"
+      />
+      <line
+        stroke-linecap="undefined"
+        stroke-linejoin="undefined"
+        id="svg_6"
+        y2="10.18018"
+        x2="25.87087"
+        y1="10.36036"
+        x1="3.16817"
+        stroke="#000"
+        fill="none"
+      />
+      <line
+        stroke-linecap="undefined"
+        stroke-linejoin="undefined"
+        id="svg_7"
+        y2="11.8018"
+        x2="27.07207"
+        y1="11.74174"
+        x1="27.07207"
+        stroke="#000"
+        fill="none"
+      />
+      <line
+        stroke-linecap="undefined"
+        stroke-linejoin="undefined"
+        id="svg_8"
+        y2="16.24625"
+        x2="25.69069"
+        y1="16.48649"
+        x1="3.70871"
+        stroke="#000"
+        fill="none"
+      />
+      <line
+        stroke-linecap="undefined"
+        stroke-linejoin="undefined"
+        id="svg_9"
+        y2="5.37538"
+        x2="36.2012"
+        y1="5.37538"
+        x1="36.26126"
+        stroke="#000"
+        fill="none"
+      />
+      <line
+        stroke-linecap="undefined"
+        stroke-linejoin="undefined"
+        id="svg_10"
+        y2="-3.21321"
+        x2="34.75976"
+        y1="-3.21321"
+        x1="34.6997"
+        stroke="#000"
+        fill="none"
+      />
     </g>
   </svg>
 );
 
-const svgRollUpRightColumn = (<svg width="30" height="20" xmlns="http://www.w3.org/2000/svg">
-  <g id="Layer_1">
-    <title>Layer 1</title>
-    <path id="svg_1" d="m5.34824,5.40693l0,0l0,-0.00166l0,0.00166zm0.00079,-0.00166l4.56917,
+const svgRollUpRightColumn = (
+  <svg width="30" height="20" xmlns="http://www.w3.org/2000/svg">
+    <g id="Layer_1">
+      <title>Layer 1</title>
+      <path
+        id="svg_1"
+        d="m5.34824,5.40693l0,0l0,-0.00166l0,0.00166zm0.00079,-0.00166l4.56917,
       4.78586l-4.56996,4.7842l1.68009,1.75998l6.25005,-6.54501l-6.25005,-6.54501l-1.67929,
       1.75998zm8.0964,11.21066l11.41619,0l0,-2.48619l-11.41619,0l0,2.48619zm3.43222,-5.1813l7.98397,
       0l0,-2.48619l-7.98397,0l0,2.48619zm-3.43222,-7.66832l0,2.48785l11.41619,0l0,-2.48785l-11.41619,0z"
-      stroke="#000" fill="#000000" />
-  </g>
-</svg>);
+        stroke="#000"
+        fill="#000000"
+      />
+    </g>
+  </svg>
+);
 
 const svgChangeSortType = (
-  <svg width="30.000000000000004" height="17" xmlns="http://www.w3.org/2000/svg">
+  <svg
+    width="30.000000000000004"
+    height="17"
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <g id="Layer_1">
       <title>Layer 1</title>
-      <path id="svg_1" d="m10.50051,9.05916c1.11218,1.49883 1.32931,1.954 0.96158,2.01582c-0.71833
+      <path
+        id="svg_1"
+        d="m10.50051,9.05916c1.11218,1.49883 1.32931,1.954 0.96158,2.01582c-0.71833
       ,0.12075 -0.57398,0.81136 0.43144,2.06412c1.26091,1.5711 3.73065,2.53591 6.05049,2.36362c0.90043
       ,-0.06687 1.9184,-0.20488 2.26217,-0.30668c0.34376,-0.10181 0.13282,0.08785 -0.46877,0.42146c-3.00947
       ,1.6689 -6.72629,1.55264 -9.69151,-0.30312c-1.18229,-0.73993 -2.80893,-2.90181 -2.80893,-3.73319c0,-0.23552 -0.26818
@@ -46,16 +117,25 @@ const svgChangeSortType = (
       ,0.06687 -1.9184,0.20488 -2.26217,0.30669c-0.34376,0.10181 -0.13282,-0.08785 0.46877,-0.42146c3.00947,-1.6689 6.72629
       ,-1.55265 9.69151,0.30312c1.18229,0.73993 2.80893,2.9018 2.80893,3.73318c0,0.23553 0.26818,0.46374 0.59595,0.50714c0.53604
       ,0.07098 0.46405,0.25786 -0.716,1.85884c-0.72158,0.97896 -1.40082,1.85015 -1.50943,1.93597c-0.10862,0.08583 -0.84393
-      ,-0.71514 -1.63404,-1.77993l0,0z" stroke="#000" fill="#000000" />
+      ,-0.71514 -1.63404,-1.77993l0,0z"
+        stroke="#000"
+        fill="#000000"
+      />
     </g>
   </svg>
 );
 
 const svgCow = (
-  <svg width="29.999999999999996" height="20" xmlns="http://www.w3.org/2000/svg">
+  <svg
+    width="29.999999999999996"
+    height="20"
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <g id="Layer_1">
       <title>Layer 1</title>
-      <path id="svg_1" d="m6.7307,17.30619c-0.85991,-0.07901 -0.01995,-1.30077 -0.3443,
+      <path
+        id="svg_1"
+        d="m6.7307,17.30619c-0.85991,-0.07901 -0.01995,-1.30077 -0.3443,
         -1.8666c-0.00328,-0.83292 -0.34344,-1.65316 -0.23276,-2.48165c0.67672,-1.46066 0.1128,
         -3.05591 -0.03559,-4.56047c-0.06708,-0.33219 -0.06511,-1.18545 -0.23187,-0.42686c-0.46181,
         1.27902 -0.0107,2.85995 -0.40568,4.15531c-0.66015,0.72121 -1.15879,-0.42302 -0.52861,-0.86178c0.73624,
@@ -71,21 +151,46 @@ const svgCow = (
         -0.20943 -2.06929,-0.36522 -2.68245,0.26733c-0.2759,0.95395 -0.20214,1.97845 -0.43733,2.94661c-0.00396,
         0.50618 0.52575,0.94076 -0.37165,0.7995c-0.37503,0.00783 -0.75108,0.01857 -1.12573,-0.00428l0,0zm0.76574,
         -1.07727c0.14759,-0.45334 -0.21288,-1.60509 -0.24378,-0.53083c-0.12278,0.34084 0.03337,1.97786 0.21679,
-        0.89111c0.0116,-0.11992 0.01984,-0.24009 0.02699,-0.36028z" stroke="#000" fill="#000000" />
+        0.89111c0.0116,-0.11992 0.01984,-0.24009 0.02699,-0.36028z"
+        stroke="#000"
+        fill="#000000"
+      />
     </g>
   </svg>
 );
 
-const svgTaskSeparator = (<svg width="30" height="15" xmlns="http://www.w3.org/2000/svg">
-  <g id="Layer_1">
-    <title>Layer 1</title>
-    <ellipse ry="2.34375" rx="2.71875" id="svg_1" cy="8.78125" cx="13.90625" stroke="#000" fill="#000000" />
-  </g>
-</svg>);
+const svgTaskSeparator = (
+  <svg width="30" height="15" xmlns="http://www.w3.org/2000/svg">
+    <g id="Layer_1">
+      <title>Layer 1</title>
+      <ellipse
+        ry="2.34375"
+        rx="2.71875"
+        id="svg_1"
+        cy="8.78125"
+        cx="13.90625"
+        stroke="#000"
+        fill="#000000"
+      />
+    </g>
+  </svg>
+);
 
 const deleteSvg = (
-  <svg width="20px" height="20px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><g id="Layer_1">
-    <title>Layer 1</title><path fill="#000000" d="M352 192V95.936a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32V192h256a32 32 0 1 1 0 64H96a32 32 0 0 1 0-64h256zm64 0h192v-64H416v64zM192 960a32 32 0 0 1-32-32V256h704v672a32 32 0 0 1-32 32H192zm224-192a32 32 0 0 0 32-32V416a32 32 0 0 0-64 0v320a32 32 0 0 0 32 32zm192 0a32 32 0 0 0 32-32V416a32 32 0 0 0-64 0v320a32 32 0 0 0 32 32z" /></g></svg>
+  <svg
+    width="20px"
+    height="20px"
+    viewBox="0 0 1024 1024"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g id="Layer_1">
+      <title>Layer 1</title>
+      <path
+        fill="#000000"
+        d="M352 192V95.936a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32V192h256a32 32 0 1 1 0 64H96a32 32 0 0 1 0-64h256zm64 0h192v-64H416v64zM192 960a32 32 0 0 1-32-32V256h704v672a32 32 0 0 1-32 32H192zm224-192a32 32 0 0 0 32-32V416a32 32 0 0 0-64 0v320a32 32 0 0 0 32 32zm192 0a32 32 0 0 0 32-32V416a32 32 0 0 0-64 0v320a32 32 0 0 0 32 32z"
+      />
+    </g>
+  </svg>
 );
 
 export class App extends React.Component {
@@ -120,8 +225,8 @@ export class App extends React.Component {
         category: "",
         isImportant: true,
         isComplete: true,
-        subtasks: [{ description: "", isComplete: false }]
-      }
+        subtasks: [{ description: "", isComplete: false }],
+      },
     ],
 
     showEarlier: false,
@@ -140,10 +245,9 @@ export class App extends React.Component {
     window.addEventListener("resize", this.onWindowResize);
     this.onWindowResize();
 
-
-    fetch('http://localhost:8080/data')
-      .then(response => response.json())
-      .then(data => this.setState({ tasks: data }, this.sortFunction()));
+    fetch("http://localhost:8080/data")
+      .then((response) => response.json())
+      .then((data) => this.setState({ tasks: data }, this.sortFunction()));
 
     counter++;
 
@@ -204,7 +308,7 @@ export class App extends React.Component {
     this.setState({
       sortContextMenuIsVisible: res,
       sortContextMenuX: x - 20,
-      sortContextMenuY: y
+      sortContextMenuY: y,
     });
   };
 
@@ -218,7 +322,7 @@ export class App extends React.Component {
     this.setState({
       sortContextMenuIsVisible: false,
       sortSelectorIsVisible: true,
-      taskSortType: 1
+      taskSortType: 1,
     });
     console.log(1);
 
@@ -229,7 +333,7 @@ export class App extends React.Component {
     this.setState({
       sortContextMenuIsVisible: false,
       sortSelectorIsVisible: true,
-      taskSortType: 2
+      taskSortType: 2,
     });
 
     this.sortFunction();
@@ -240,7 +344,7 @@ export class App extends React.Component {
     this.setState({
       sortContextMenuIsVisible: false,
       sortSelectorIsVisible: true,
-      taskSortType: 3
+      taskSortType: 3,
     });
     console.log(3);
 
@@ -259,7 +363,7 @@ export class App extends React.Component {
     this.setState({
       sortSelectorIsVisible: false,
       isSortDescending: false,
-      taskSortType: 1
+      taskSortType: 1,
     });
 
     this.sortFunction();
@@ -283,11 +387,11 @@ export class App extends React.Component {
       if (date <= taskEnd && date >= taskStart) {
         alert(
           "Задача попала в интервал задачи " +
-          arr[i].title +
-          " со временем " +
-          arr[i].start +
-          " " +
-          arr[i].finish
+            arr[i].title +
+            " со временем " +
+            arr[i].start +
+            " " +
+            arr[i].finish
         );
         return true;
       }
@@ -312,11 +416,11 @@ export class App extends React.Component {
       ) {
         alert(
           "Задача попала в интервал задачи " +
-          arr[i].title +
-          " со временем " +
-          arr[i].start +
-          " " +
-          arr[i].finish
+            arr[i].title +
+            " со временем " +
+            arr[i].start +
+            " " +
+            arr[i].finish
         );
         return true;
       }
@@ -385,7 +489,7 @@ export class App extends React.Component {
       category: "",
       isImportant: false,
       isComplete: false,
-      description: ""
+      description: "",
     });
 
     this.setState(
@@ -393,14 +497,17 @@ export class App extends React.Component {
         tasks: arr,
         currentTaskTitle: "",
         currentTaskStart: "",
-        currentTaskEnd: ""
+        currentTaskEnd: "",
       },
-      this.sortFunction(), fetch("http://localhost:8080/data", {
-        method: "POST", mode: 'no-cors', headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
+      this.sortFunction(),
+      fetch("http://localhost:8080/data", {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(this.state.tasks, null, 2)
+        body: JSON.stringify(this.state.tasks, null, 2),
       })
     );
   };
@@ -424,18 +531,22 @@ export class App extends React.Component {
 
       newSubtasks.push({
         description: curSubTaskDesc,
-        isComplete: false
+        isComplete: false,
       });
 
       newTasks[taskIdx].subtasks = newSubtasks;
 
       fetch("http://localhost:8080/data", {
-        method: "POST", mode: 'no-cors', headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(this.state.tasks, null, 2)
-      }).then(this.setState({ tasks: newTasks, currentSubTaskDescription: "" }));
+        body: JSON.stringify(this.state.tasks, null, 2),
+      }).then(
+        this.setState({ tasks: newTasks, currentSubTaskDescription: "" })
+      );
     } else {
       this.setState({ currentSubTaskDescription: "" });
     }
@@ -449,11 +560,13 @@ export class App extends React.Component {
 
     newTasks[taskIdx].subtasks = newSubtasks;
     fetch("http://localhost:8080/data", {
-      method: "POST", mode: 'no-cors', headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(this.state.tasks, null, 2)
+      body: JSON.stringify(this.state.tasks, null, 2),
     }).then(this.setState({ tasks: newTasks }));
   };
 
@@ -477,11 +590,13 @@ export class App extends React.Component {
     newTasks[taskIdx].subtasks = newSubtasks;
 
     fetch("http://localhost:8080/data", {
-      method: "POST", mode: 'no-cors', headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(this.state.tasks, null, 2)
+      body: JSON.stringify(this.state.tasks, null, 2),
     }).then(this.setState({ tasks: newTasks }));
   };
 
@@ -498,7 +613,7 @@ export class App extends React.Component {
       editSubTaskDesc: e.target.value,
       isSubTaskEdit: true,
       editSubtaskNum: idx,
-      selection: e.target.selectionStart
+      selection: e.target.selectionStart,
     });
   };
 
@@ -513,11 +628,13 @@ export class App extends React.Component {
       newSubtasks[idx].description = editSubTaskDesc;
 
       fetch("http://localhost:8080/data", {
-        method: "POST", mode: 'no-cors', headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(this.state.tasks, null, 2)
+        body: JSON.stringify(this.state.tasks, null, 2),
       }).then(this.setState({ tasks: newTasks }));
     }
 
@@ -657,11 +774,13 @@ export class App extends React.Component {
       const newTasks = [...this.state.tasks];
       newTasks[taskIdx].start = e.target.value;
       fetch("http://localhost:8080/data", {
-        method: "POST", mode: 'no-cors', headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(this.state.tasks, null, 2)
+        body: JSON.stringify(this.state.tasks, null, 2),
       }).then(this.setState({ tasks: newTasks }));
     }
   };
@@ -690,11 +809,13 @@ export class App extends React.Component {
       const newTasks = [...this.state.tasks];
       newTasks[taskIdx].finish = e.target.value;
       fetch("http://localhost:8080/data", {
-        method: "POST", mode: 'no-cors', headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(this.state.tasks, null, 2)
+        body: JSON.stringify(this.state.tasks, null, 2),
       }).then(this.setState({ tasks: newTasks }));
     }
   };
@@ -706,11 +827,13 @@ export class App extends React.Component {
     task.category = e.target.value;
     newTasks[taskIdx] = task;
     fetch("http://localhost:8080/data", {
-      method: "POST", mode: 'no-cors', headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(this.state.tasks, null, 2)
+      body: JSON.stringify(this.state.tasks, null, 2),
     }).then(this.setState({ tasks: newTasks }));
   };
 
@@ -721,11 +844,13 @@ export class App extends React.Component {
     task.description = e.target.value;
     newTasks[taskIdx] = task;
     fetch("http://localhost:8080/data", {
-      method: "POST", mode: 'no-cors', headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(this.state.tasks, null, 2)
+      body: JSON.stringify(this.state.tasks, null, 2),
     }).then(this.setState({ tasks: newTasks }));
   };
 
@@ -775,20 +900,20 @@ export class App extends React.Component {
       const oldTasks = [...this.state.tasks];
       const newTasks = [];
 
-
       for (var i = 0; i < oldTasks.length; i++) {
         if (i !== taskIdx) {
           newTasks.push(oldTasks[i]);
         }
       }
 
-
       fetch("http://localhost:8080/data", {
-        method: "POST", mode: 'no-cors', headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(newTasks, null, 2)
+        body: JSON.stringify(newTasks, null, 2),
       }).then(this.setState({ tasks: newTasks, isRightColumnVisible: false }));
     }
   };
@@ -798,11 +923,13 @@ export class App extends React.Component {
 
     newTasks[idx].isComplete = e.target.checked;
     fetch("http://localhost:8080/data", {
-      method: "POST", mode: 'no-cors', headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(newTasks, null, 2)
+      body: JSON.stringify(newTasks, null, 2),
     }).then(this.setState({ tasks: newTasks }));
   };
 
@@ -836,11 +963,13 @@ export class App extends React.Component {
     }
 
     fetch("http://localhost:8080/data", {
-      method: "POST", mode: 'no-cors', headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(this.state.tasks, null, 2)
+      body: JSON.stringify(this.state.tasks, null, 2),
     }).then(this.setState({ tasks: arr, isRightColumnVisible: false }));
   };
 
@@ -856,8 +985,7 @@ export class App extends React.Component {
 
   groupMapper = (arr) => {
     return arr.map((el) => (
-      <div class="tasks"
-      >
+      <div class="tasks">
         <div class="desc" onClick={() => this.rightColumnAddHandler(el.index)}>
           <span>{this.state.tasks[el.index].title}</span>
         </div>
@@ -868,19 +996,16 @@ export class App extends React.Component {
               <input
                 type="checkbox"
                 checked={this.state.tasks[el.index].isComplete}
-                onChange={(e) =>
-                  this.taskCompleteHandler(e, el.index)
-                }
+                onChange={(e) => this.taskCompleteHandler(e, el.index)}
               />
             </div>
             <div>
               Важно:
               <input
                 type="checkbox"
+                id="checkbox-2"
                 checked={this.state.tasks[el.index].isImportant}
-                onChange={(e) =>
-                  this.taskImportantHandler(e, el.index)
-                }
+                onChange={(e) => this.taskImportantHandler(e, el.index)}
               />
             </div>
           </div>
@@ -888,28 +1013,19 @@ export class App extends React.Component {
             style={{
               display: "flex",
               alignItems: "center",
-              justifyContent: "space-between"
+              justifyContent: "space-between",
             }}
           >
             <div class="subDesc">
-              <div>
-                {svgTaskSeparator}
-                {el.subtaskStatus}
-              </div>
-              <div>
-                {svgTaskSeparator}
-                {el.actual}
-              </div>
-              <div>
-                {svgTaskSeparator}
-                {el.category}
-              </div>
+              <div className="subDesc-desc">{el.subtaskStatus}</div>
+              <div className="subDesc-desc">{el.actual}</div>
+              <div className="subDesc-desc">{el.category}</div>
             </div>
           </div>
         </div>
       </div>
-    ))
-  }
+    ));
+  };
 
   mapTaskToView = (arr) => {
     const newArr = [];
@@ -954,12 +1070,12 @@ export class App extends React.Component {
         index: arr[i],
         actual: actual,
         subtaskStatus: subtaskStatus,
-        category: category
+        category: category,
       });
     }
 
     return newArr;
-  }
+  };
 
   render() {
     const today = new Date();
@@ -970,31 +1086,45 @@ export class App extends React.Component {
     const inTheWeek = new Date(afterTomorrow);
     inTheWeek.setDate(afterTomorrow.getDate() + 6);
 
-    const numberArr = this.state.tasks.map((el, idx) => { return idx; });
+    const numberArr = this.state.tasks.map((el, idx) => {
+      return idx;
+    });
 
     const arrEarlier = numberArr.filter(
-      (el) => (this.state.tasks[el].start.slice(0, 10) < today.toISOString().split("T")[0])
+      (el) =>
+        this.state.tasks[el].start.slice(0, 10) <
+        today.toISOString().split("T")[0]
     );
 
     const arrToday = numberArr.filter(
-      (el) => (this.state.tasks[el].start.slice(0, 10) === today.toISOString().split("T")[0])
+      (el) =>
+        this.state.tasks[el].start.slice(0, 10) ===
+        today.toISOString().split("T")[0]
     );
 
     const arrTomorrow = numberArr.filter(
-      (el) => (this.state.tasks[el].start.slice(0, 10) === tomorrow.toISOString().split("T")[0])
+      (el) =>
+        this.state.tasks[el].start.slice(0, 10) ===
+        tomorrow.toISOString().split("T")[0]
     );
 
     const arrAfterTomorrow = numberArr.filter(
-      (el) => (this.state.tasks[el].start.slice(0, 10) === afterTomorrow.toISOString().split("T")[0])
+      (el) =>
+        this.state.tasks[el].start.slice(0, 10) ===
+        afterTomorrow.toISOString().split("T")[0]
     );
 
     const arrInTheWeek = numberArr.filter(
-      (el) => (this.state.tasks[el].start.slice(0, 10) > afterTomorrow.toISOString().split("T")[0]
-        && this.state.tasks[el].start <= inTheWeek.toISOString().split("T")[0])
+      (el) =>
+        this.state.tasks[el].start.slice(0, 10) >
+          afterTomorrow.toISOString().split("T")[0] &&
+        this.state.tasks[el].start <= inTheWeek.toISOString().split("T")[0]
     );
 
     const arrLater = numberArr.filter(
-      (el) => (this.state.tasks[el].start.slice(0, 10) > inTheWeek.toISOString().split("T")[0])
+      (el) =>
+        this.state.tasks[el].start.slice(0, 10) >
+        inTheWeek.toISOString().split("T")[0]
     );
 
     const newArrEarlier = this.mapTaskToView(arrEarlier);
@@ -1020,7 +1150,9 @@ export class App extends React.Component {
       filterFunction = (el) => this.allTaskFilterPaint(el);
     }
 
-    const oldIdxArr = numberArr.filter(el => (filterFunction(this.state.tasks[el])));
+    const oldIdxArr = numberArr.filter((el) =>
+      filterFunction(this.state.tasks[el])
+    );
     const idxArr = this.mapTaskToView(oldIdxArr);
 
     var todayTaskCount = this.state.tasks.filter(this.todayTaskFilter).length;
@@ -1029,8 +1161,9 @@ export class App extends React.Component {
       todayTaskCount = "";
     }
 
-    var importantTaskCount = this.state.tasks.filter(this.importantTaskFilter)
-      .length;
+    var importantTaskCount = this.state.tasks.filter(
+      this.importantTaskFilter
+    ).length;
 
     if (importantTaskCount === 0) {
       importantTaskCount = "";
@@ -1093,9 +1226,9 @@ export class App extends React.Component {
                     {svg}
                   </button>
                 )}
-                <span>
+                <span className="taskNameChange">
                   {svgCow}
-                  {titleHeader}
+                  <span className="taskNameChangep">{titleHeader}</span>
                 </span>
               </div>
 
@@ -1123,10 +1256,12 @@ export class App extends React.Component {
               <div
                 style={{
                   height: "40%",
-                  width: "80%"
+                  width: "80%",
                 }}
               >
-                <input className="data"
+                <input
+                  id="main-input"
+                  className="data"
                   style={{
                     marginTop: 10,
                     height: "80%",
@@ -1144,13 +1279,14 @@ export class App extends React.Component {
                   display: "flex",
                   flexDirection: "row",
                   justifyContent: "space-between",
-                  width: "80%"
+                  width: "80%",
                 }}
               >
                 <div>
                   <div>
                     <h className="h">Старт задачи :</h>
-                    <input className="data-1"
+                    <input
+                      className="data-1"
                       type="datetime-local"
                       onChange={this.selectStartDateHandler}
                       value={this.state.currentTaskStart}
@@ -1158,7 +1294,8 @@ export class App extends React.Component {
                   </div>
                   <div>
                     <h className="h">Конец задачи :</h>
-                    <input className="data-1"
+                    <input
+                      className="data-1"
                       type="datetime-local"
                       value={this.state.currentTaskEnd}
                       onChange={this.selectEndDateHandler}
@@ -1167,7 +1304,13 @@ export class App extends React.Component {
                 </div>
                 <div>
                   {isAddButtonActive && (
-                    <button className="custom-btn btn-6" onClick={this.addNewTaskHandler}> Добавить </button>
+                    <button
+                      className="custom-btn btn-6"
+                      onClick={this.addNewTaskHandler}
+                    >
+                      {" "}
+                      Добавить{" "}
+                    </button>
                   )}
                   {!isAddButtonActive && (
                     <button disabled={true}> Добавить </button>
@@ -1176,96 +1319,159 @@ export class App extends React.Component {
               </div>
             </div>
 
-            {this.state.taskGroupType !== 4 && <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                overflowY: "scroll",
-                flexGrow: 1
-              }}
-            >
-              {this.groupMapper(idxArr)}
-            </div>
-            }
+            {this.state.taskGroupType !== 4 && (
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  overflowY: "scroll",
+                  flexGrow: 1,
+                }}
+              >
+                {this.groupMapper(idxArr)}
+              </div>
+            )}
 
-            {this.state.taskGroupType === 4 && <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                overflowY: "scroll",
-                flexGrow: 1
-              }}
-            >
+            {this.state.taskGroupType === 4 && (
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  overflowY: "scroll",
+                  flexGrow: 1,
+                }}
+              >
+                {arrEarlier.length > 0 && (
+                  <div
+                    class="centerElem-taskCard"
+                    onClick={() =>
+                      this.setState({ showEarlier: !this.state.showEarlier })
+                    }
+                  >
+                    <div class="taskCard-Actions">
+                      <button>{this.state.showEarlier ? "∨" : ">"}</button>
+                    </div>
+                    <div class="taskCard">
+                      <div class="centerElemText">Раньше : </div>
+                      <div class="centerElemCount">{arrEarlier.length}</div>
+                    </div>
+                  </div>
+                )}
+                {this.state.showEarlier &&
+                  arrEarlier.length > 0 &&
+                  this.groupMapper(newArrEarlier)}
 
-              {arrEarlier.length > 0 && <div class="centerElem-taskCard" onClick={() => this.setState({ showEarlier: !this.state.showEarlier })}>
-                <div class="taskCard-Actions">
-                  <button>{this.state.showEarlier ? '∨' : '>'}</button>
-                </div>
-                <div class="taskCard">
-                  <div class="centerElemText">Раньше : </div>
-                  <div class="centerElemCount">{arrEarlier.length}</div>
-                </div>
-              </div>}
-              {(this.state.showEarlier && arrEarlier.length > 0) && this.groupMapper(newArrEarlier)}
+                {arrToday.length > 0 && (
+                  <div
+                    class="centerElem-taskCard"
+                    onClick={() =>
+                      this.setState({ showToday: !this.state.showToday })
+                    }
+                  >
+                    <div class="taskCard-Actions">
+                      <button>{this.state.showToday ? "∨" : ">"}</button>
+                    </div>
+                    <div class="taskCard">
+                      <div class="centerElemText">Сегодня : </div>
+                      <div class="centerElemCount">{arrToday.length}</div>
+                    </div>
+                  </div>
+                )}
+                {arrToday.length > 0 &&
+                  this.state.showToday &&
+                  this.groupMapper(newArrToday)}
 
-              {arrToday.length > 0 && <div class="centerElem-taskCard" onClick={() => this.setState({ showToday: !this.state.showToday })}>
-                <div class="taskCard-Actions">
-                  <button>{this.state.showToday ? '∨' : '>'}</button>
-                </div>
-                <div class="taskCard">
-                  <div class="centerElemText">Сегодня : </div>
-                  <div class="centerElemCount">{arrToday.length}</div>
-                </div>
-              </div>}
-              {(arrToday.length > 0 && this.state.showToday) && this.groupMapper(newArrToday)}
+                {arrTomorrow > 0 && (
+                  <div
+                    class="centerElem-taskCard"
+                    onClick={() =>
+                      this.setState({ showTomorrow: !this.state.showTomorrow })
+                    }
+                  >
+                    <div class="taskCard-Actions">
+                      <button>{this.state.showTomorrow ? "∨" : ">"}</button>
+                    </div>
+                    <div class="taskCard">
+                      <div class="centerElemText">Завтра : </div>
+                      <div class="centerElemCount">{arrTomorrow.length}</div>
+                    </div>
+                  </div>
+                )}
+                {arrTomorrow > 0 &&
+                  this.state.showTomorrow &&
+                  this.groupMapper(newArrTomorrow)}
 
-              {arrTomorrow > 0 && <div class="centerElem-taskCard" onClick={() => this.setState({ showTomorrow: !this.state.showTomorrow })}>
-                <div class="taskCard-Actions">
-                  <button>{this.state.showTomorrow ? '∨' : '>'}</button>
-                </div>
-                <div class="taskCard">
-                  <div class="centerElemText">Завтра : </div>
-                  <div class="centerElemCount">{arrTomorrow.length}</div>
-                </div>
-              </div>}
-              {(arrTomorrow > 0 && this.state.showTomorrow) && this.groupMapper(newArrTomorrow)}
+                {arrAfterTomorrow.length > 0 && (
+                  <div
+                    class="centerElem-taskCard"
+                    onClick={() =>
+                      this.setState({
+                        showAfterTomorrow: !this.state.showAfterTomorrow,
+                      })
+                    }
+                  >
+                    <div class="taskCard-Actions">
+                      <button>
+                        {this.state.showAfterTomorrow ? "∨" : ">"}
+                      </button>
+                    </div>
+                    <div class="taskCard">
+                      <div class="centerElemText">Послезавтра : </div>
+                      <div class="centerElemCount">
+                        {arrAfterTomorrow.length}
+                      </div>
+                    </div>
+                  </div>
+                )}
+                {arrAfterTomorrow.length > 0 &&
+                  this.state.showAfterTomorrow &&
+                  this.groupMapper(newArrAfterTomorrow)}
 
-              {arrAfterTomorrow.length > 0 && <div class="centerElem-taskCard" onClick={() => this.setState({ showAfterTomorrow: !this.state.showAfterTomorrow })}>
-                <div class="taskCard-Actions">
-                  <button>{this.state.showAfterTomorrow ? '∨' : '>'}</button>
-                </div>
-                <div class="taskCard">
-                  <div class="centerElemText">Послезавтра : </div>
-                  <div class="centerElemCount">{arrAfterTomorrow.length}</div>
-                </div>
-              </div>}
-              {(arrAfterTomorrow.length > 0 && this.state.showAfterTomorrow) && this.groupMapper(newArrAfterTomorrow)}
+                {arrInTheWeek.length > 0 && (
+                  <div
+                    class="centerElem-taskCard"
+                    onClick={() =>
+                      this.setState({
+                        showInTheWeek: !this.state.showInTheWeek,
+                      })
+                    }
+                  >
+                    <div class="taskCard-Actions">
+                      <button>{this.state.showInTheWeek ? "∨" : ">"}</button>
+                    </div>
+                    <div class="taskCard">
+                      <div class="centerElemText">Следующая неделя : </div>
+                      <div class="centerElemCount">{arrInTheWeek.length}</div>
+                    </div>
+                  </div>
+                )}
+                {arrInTheWeek.length > 0 &&
+                  this.state.showInTheWeek &&
+                  this.groupMapper(newArrInTheWeek)}
 
-              {arrInTheWeek.length > 0 && <div class="centerElem-taskCard" onClick={() => this.setState({ showInTheWeek: !this.state.showInTheWeek })}>
-                <div class="taskCard-Actions">
-                  <button>{this.state.showInTheWeek ? '∨' : '>'}</button>
-                </div>
-                <div class="taskCard">
-                  <div class="centerElemText">Следующая неделя : </div>
-                  <div class="centerElemCount">{arrInTheWeek.length}</div>
-                </div>
-              </div>}
-              {arrInTheWeek.length > 0 && this.state.showInTheWeek && this.groupMapper(newArrInTheWeek)}
-
-              {arrLater.length > 0 && <div class="centerElem-taskCard" onClick={() => this.setState({ showLater: !this.state.showLater })}>
-                <div class="taskCard-Actions">
-                  <button>{this.state.showLater ? '∨' : '>'}</button>
-                </div>
-                <div class="taskCard">
-                  <div class="centerElemText">Позже : </div>
-                  <div class="centerElemCount">{arrLater.length}</div>
-                </div>
-              </div>}
-              {(arrLater.length > 0 && this.state.showLater) && this.groupMapper(newArrLater)}
-            </div>
-            }
+                {arrLater.length > 0 && (
+                  <div
+                    class="centerElem-taskCard"
+                    onClick={() =>
+                      this.setState({ showLater: !this.state.showLater })
+                    }
+                  >
+                    <div class="taskCard-Actions">
+                      <button>{this.state.showLater ? "∨" : ">"}</button>
+                    </div>
+                    <div class="taskCard">
+                      <div class="centerElemText">Позже : </div>
+                      <div class="centerElemCount">{arrLater.length}</div>
+                    </div>
+                  </div>
+                )}
+                {arrLater.length > 0 &&
+                  this.state.showLater &&
+                  this.groupMapper(newArrLater)}
+              </div>
+            )}
           </div>
 
           {this.state.isRightColumnVisible && (
@@ -1275,7 +1481,7 @@ export class App extends React.Component {
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
-                  flexGrow: 1
+                  flexGrow: 1,
                 }}
               >
                 <div
@@ -1283,7 +1489,7 @@ export class App extends React.Component {
                     width: "80%",
                     height: 40,
                     display: "flex",
-                    alignItems: "center"
+                    alignItems: "center",
                   }}
                 >
                   {this.state.tasks[curTaskIdx].title}
@@ -1292,7 +1498,7 @@ export class App extends React.Component {
                   style={{
                     display: "flex",
                     width: "80%",
-                    alignItems: "center"
+                    alignItems: "center",
                   }}
                 >
                   <div
@@ -1300,9 +1506,13 @@ export class App extends React.Component {
                       width: "100%",
                       display: "flex",
                       flexDirection: "column",
-                      alignItems: "center"
+                      alignItems: "center",
                     }}
                   >
+                    <div style={{ width: "80%", marginTop: 10 }}>
+                      {" "}
+                      Подзадачи:{" "}
+                    </div>
                     {this.state.tasks[curTaskIdx].subtasks.map((el, idx) => (
                       <div
                         style={{
@@ -1311,7 +1521,7 @@ export class App extends React.Component {
                           flexDirection: "row",
                           justifyContent: "space-between",
                           alignItems: "center",
-                          height: 30
+                          height: 30,
                         }}
                       >
                         <div style={{ width: "15%" }}>
@@ -1326,14 +1536,14 @@ export class App extends React.Component {
                         <div style={{ flexGrow: 1 }}>
                           {(!this.state.isSubTaskEdit ||
                             this.state.editSubtaskNum !== idx) && (
-                              <input
-                                style={{ width: "90%" }}
-                                value={el.description}
-                                onClick={(e) =>
-                                  this.editSubTaskDescOnClickHandler(e, idx)
-                                }
-                              ></input>
-                            )}
+                            <input
+                              style={{ width: "90%" }}
+                              value={el.description}
+                              onClick={(e) =>
+                                this.editSubTaskDescOnClickHandler(e, idx)
+                              }
+                            ></input>
+                          )}
                           {this.state.isSubTaskEdit &&
                             this.state.editSubtaskNum === idx && (
                               <input
@@ -1379,7 +1589,7 @@ export class App extends React.Component {
                     width: "80%",
                     display: "flex",
                     flexDirection: "column",
-                    alignItems: "center"
+                    alignItems: "center",
                   }}
                 >
                   <div style={{ width: "80%", marginTop: 10 }}> Описание: </div>
@@ -1399,7 +1609,7 @@ export class App extends React.Component {
                     width: "80%",
                     display: "flex",
                     flexDirection: "column",
-                    alignItems: "center"
+                    alignItems: "center",
                   }}
                 >
                   <div style={{ width: "80%", marginTop: 10 }}>
@@ -1413,7 +1623,9 @@ export class App extends React.Component {
                       onChange={(e) => this.editStartDateHandler(e)}
                     />
                   </div>
-                  <div style={{ width: "80%", marginTop: 10 }}>Конец задачи:</div>
+                  <div style={{ width: "80%", marginTop: 10 }}>
+                    Конец задачи:
+                  </div>
                   <div style={{ width: "80%" }}>
                     <input
                       style={{ width: "100%" }}
@@ -1429,7 +1641,7 @@ export class App extends React.Component {
                     width: "80%",
                     display: "flex",
                     flexDirection: "column",
-                    alignItems: "center"
+                    alignItems: "center",
                   }}
                 >
                   <div style={{ width: "80%", marginTop: 10 }}>Категория:</div>

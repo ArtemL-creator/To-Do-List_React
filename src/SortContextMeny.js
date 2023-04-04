@@ -15,9 +15,15 @@ export class SortContextMenu extends React.Component {
         className="sortContexMenu"
         style={{ position: "absolute", top: y, left: x }}
       >
-        <div onClick={handleDate}>По дате</div>
-        <div onClick={handleTitle}>По названию</div>
-        <div onClick={handleImportant}>По важности</div>
+        <div onClick={handleDate} className="sort-menu-hover">
+          По дате
+        </div>
+        <div onClick={handleTitle} className="sort-menu-hover">
+          По названию
+        </div>
+        <div onClick={handleImportant} className="sort-menu-hover">
+          По важности
+        </div>
       </div>
     );
   }
