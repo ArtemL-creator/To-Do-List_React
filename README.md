@@ -1,9 +1,9 @@
 # To-Do-List_React
----
-permalink: /index.html
----
----
-permalink: /public/index.html
----
 
-https://codesandbox.io/s/bold-glade-88nmye?file=/src/App.js
+-   у тебя было яблоко, тебе дали еще одно
+    сколько у тебя яблок?
+
+-   одно яблоко
+    потому что яблоко + одно = одно яблоко
+
+-   твой родной язык это джаваскрипт что ли ****

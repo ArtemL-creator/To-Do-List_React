@@ -1,34 +1,46 @@
 .App {
   font-family: sans-serif;
   text-align: center;
-  
+
 }
+
 .flexStyle {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border: 1px solid black;
   height: 98vh;
-  
+}
+
+.button {
+  cursor: pointer;
+}
+
+.chekbox{
+  cursor: pointer;
 }
 .leftColumn {
   width: 290px;
   min-width: 200px;
-  border: 1px solid black;
+  border: 1px solid gray;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   background-image: url('https://kartinkin.net/pics/uploads/posts/2022-08/1660836919_56-kartinkin-net-p-svetlo-serii-fon-dlya-saita-krasivo-60.png');
 
 }
+
 .rightColumn {
   width: 360px;
-  border: 1px solid black;
+  border: 1px solid gray;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
+
 .header {
-  border: 1px solid black;
+  border-bottom: 1px solid gray;
+  border-radius: 5px;
   height: 60px;
   display: flex;
   background-image: url('https://damion.club/uploads/posts/2022-01/1642572019_74-damion-club-p-belie-foni-s-kotami-80.jpg');
@@ -36,109 +48,125 @@
   background-position: center;
   -webkit-background-size: cover;
   background-size: cover;
- 
+
 }
+
 .headerButton {
   align-self: center;
 }
+
 .headerButtonStyle {
   background: transparent;
   border: none !important;
-  
-  
-  
+  cursor: pointer;
 }
+
 .footer {
+  border-top: 1px solid gray;
   height: 100px;
-  border: 1px solid black;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   color: red;
 }
+
 .leftColumnElem {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   height: 50px;
+  cursor: pointer;
 }
+
 .leftColumnElemIcon {
   width: 35px;
-  
+
 }
+
 .leftColumnElemCount {
   width: 20px;
 }
+
 .leftColumnElemText {
   flex-grow: 1;
-  font-size:120%;
+  font-size: 120%;
 
 }
+
 .leftColumnCenter {
   display: flex;
   flex-direction: column;
-  
-  
-}
-.centerColumn {
-  flex-grow: 1;
- 
+
 
 }
+
+.centerColumn {
+  flex-grow: 1;
+  background-image: url('');
+}
+
 .centerColumnHeader {
-  border: 1px solid black;
+  border: 1px solid gray;
+  border-radius: 5px;
   height: 60px;
   display: flex;
   justify-content: space-between;
   background-image: url('https://top-fon.com/uploads/posts/2022-09/1663562351_87-top-fon-com-p-svetlo-serii-fon-s-razvodami-foto-112.jpg');
 
 }
+
 .centerColumnHeaderIcon {
   width: 100px;
   align-self: center;
   flex-grow: 1;
 }
+
 .centerColumnSortDiv {
   width: 120px;
   align-self: center;
 
 
 }
+
 .rightColumnFooterButtonDiv {
   width: 20px;
   align-self: center;
 }
+
 .sortContexMenu {
   width: 130px;
   height: 80px;
   border: 1px solid black;
   background-color: #eeeeee;
 }
+
 .sortSelectorDiv {
-  border: 1px solid black;
   height: 30px;
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
-  
+
 }
+
 .addTaskDivInCenterColumn {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid black;
-  height: 120px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  height: 22%;
   display: flex;
-  background-image: url('https://top-fon.com/uploads/posts/2022-09/1663562351_87-top-fon-com-p-svetlo-serii-fon-s-razvodami-foto-112.jpg');
+  background-image: url('https://brest.mil.ru/images/tild3635-6434-4361-a139-363666393361__--1.jpg');
 }
+
 .centerElem {
   overflow: hidden;
   display: block;
   z-index: 1;
 }
 
-.taskCard-Actions{
+.taskCard-Actions {
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -148,17 +176,17 @@
 }
 
 .centerElemText {
- margin-right: 1px;
+  margin-right: 1px;
 }
 
 .centerElemCount {
   margin-left: .85em;
 }
 
-.centerElem-taskCard{
-  margin-top:  10px;
+.centerElem-taskCard {
+  margin-top: 10px;
   display: flex;
-  width : 80%;
+  width: 80%;
 }
 
 .taskCard {
@@ -167,7 +195,27 @@
   padding: 8px 8px;
 }
 
+.tasks{
+  width: 90%;
+  display: flex;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
 
+.desc{
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 260px;
+  cursor: pointer;
+}
+
+.subDesc{
+  display: flex;
+  margin-left: 5px;
+  width: 300px;
+}
 
 .custom-btn {
   width: 130px;
@@ -182,69 +230,85 @@
   transition: all 0.3s ease;
   position: relative;
   display: inline-block;
-   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
-   7px 7px 20px 0px rgba(0,0,0,.1),
-   4px 4px 5px 0px rgba(0,0,0,.1);
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+    7px 7px 20px 0px rgba(0, 0, 0, .1),
+    4px 4px 5px 0px rgba(0, 0, 0, .1);
   outline: none;
 }
+
+.Layer_1{
+  cursor: pointer;
+}
+
 .btn-6 {
-  background: rgb(247,150,192);
-background: radial-gradient(circle, rgba(247,150,192,1) 0%, rgba(118,174,241,1) 100%);
+  background: radial-gradient(circle, rgba(220,220,220, 1) 0%, rgba(229,228,226, 1) 100%);
   line-height: 42px;
   padding: 0;
   border: none;
+  color: black;
 }
+
+
+
 .btn-6 span {
   position: relative;
   display: block;
   width: 100%;
   height: 100%;
 }
+
 .btn-6:before,
 .btn-6:after {
   position: absolute;
   content: "";
   height: 0%;
   width: 1px;
- box-shadow:
-   -1px -1px 20px 0px rgba(255,255,255,1),
-   -4px -4px 5px 0px rgba(255,255,255,1),
-   7px 7px 20px 0px rgba(0,0,0,.4),
-   4px 4px 5px 0px rgba(0,0,0,.3);
+  box-shadow:
+    -1px -1px 20px 0px rgba(255, 255, 255, 1),
+    -4px -4px 5px 0px rgba(255, 255, 255, 1),
+    7px 7px 20px 0px rgba(0, 0, 0, .4),
+    4px 4px 5px 0px rgba(0, 0, 0, .3);
 }
+
 .btn-6:before {
   right: 0;
   top: 0;
   transition: all 500ms ease;
 }
+
 .btn-6:after {
   left: 0;
   bottom: 0;
   transition: all 500ms ease;
 }
-.btn-6:hover{
+
+.btn-6:hover {
   background: transparent;
   color: #76aef1;
   box-shadow: none;
 }
+
 .btn-6:hover:before {
   transition: all 500ms ease;
   height: 100%;
 }
+
 .btn-6:hover:after {
   transition: all 500ms ease;
   height: 100%;
 }
+
 .btn-6 span:before,
 .btn-6 span:after {
   position: absolute;
   content: "";
   box-shadow:
-   -1px -1px 20px 0px rgba(255,255,255,1),
-   -4px -4px 5px 0px rgba(255,255,255,1),
-   7px 7px 20px 0px rgba(0,0,0,.4),
-   4px 4px 5px 0px rgba(0,0,0,.3);
+    -1px -1px 20px 0px rgba(255, 255, 255, 1),
+    -4px -4px 5px 0px rgba(255, 255, 255, 1),
+    7px 7px 20px 0px rgba(0, 0, 0, .4),
+    4px 4px 5px 0px rgba(0, 0, 0, .3);
 }
+
 .btn-6 span:before {
   left: 0;
   top: 0;
@@ -252,6 +316,7 @@ background: radial-gradient(circle, rgba(247,150,192,1) 0%, rgba(118,174,241,1) 
   height: .5px;
   transition: all 500ms ease;
 }
+
 .btn-6 span:after {
   right: 0;
   bottom: 0;
@@ -259,31 +324,35 @@ background: radial-gradient(circle, rgba(247,150,192,1) 0%, rgba(118,174,241,1) 
   height: .5px;
   transition: all 500ms ease;
 }
+
 .btn-6 span:hover:before {
   width: 100%;
 }
+
 .btn-6 span:hover:after {
   width: 100%;
 }
 
-.data{
+.data {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
   border: 2px solid #2F4F4F;
-  border-radius: 14px;
- 
+  border-radius: 5px;
+
 }
-.data-1{
-  border-radius: 1px;
+
+.data-1 {
+  border-radius: 5px;
   box-shadow: 0 0 0 0px #696969;
   text-indent: 1px;
+  font-weight: bold;
   padding: 1px 9px 1px 20px;
-  width: 100px;
- 
+  width: 100%;
+
 }
-.h{
-  font-style:italic;
-  font-size: 15px;
+
+.h {
+  font-size: 17px;
 }
