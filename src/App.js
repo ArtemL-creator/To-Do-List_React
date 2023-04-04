@@ -1149,7 +1149,7 @@ export class App extends React.Component {
               >
                 <div>
                   <div>
-                    <h className="h"> Дата старта :</h>
+                    <h className="h">Старт задачи :</h>
                     <input className="data-1"
                       type="datetime-local"
                       onChange={this.selectStartDateHandler}
@@ -1157,7 +1157,7 @@ export class App extends React.Component {
                     />
                   </div>
                   <div>
-                    <h className="h">Дата конца :</h>
+                    <h className="h">Конец задачи :</h>
                     <input className="data-1"
                       type="datetime-local"
                       value={this.state.currentTaskEnd}
