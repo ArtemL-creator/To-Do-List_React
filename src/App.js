@@ -769,26 +769,28 @@ export class App extends React.Component {
 
   deleteTaskHandler = () => {
     let result = confirm("Удалить?");
-    const taskIdx="", oldTasks="", newTasks=""
+    const taskIdx = "", oldTasks = "", newTasks = ""
     if (result) {
       taskIdx = this.state.currentTaskIdx;
       oldTasks = [...this.state.tasks];
       newTasks = [];
-    }
 
-    for (var i = 0; i < oldTasks.length; i++) {
-      if (i !== taskIdx) {
-        newTasks.push(oldTasks[i]);
+
+      for (var i = 0; i < oldTasks.length; i++) {
+        if (i !== taskIdx) {
+          newTasks.push(oldTasks[i]);
+        }
       }
-    }
 
-    fetch("http://localhost:8080/data", {
-      method: "POST", mode: 'no-cors', headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(newTasks, null, 2)
-    }).then(this.setState({ tasks: newTasks, isRightColumnVisible: false }));
+
+      fetch("http://localhost:8080/data", {
+        method: "POST", mode: 'no-cors', headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newTasks, null, 2)
+      }).then(this.setState({ tasks: newTasks, isRightColumnVisible: false }));
+    }
   };
 
   taskCompleteHandler = (e, idx) => {
