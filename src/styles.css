@@ -1,7 +1,5 @@
 .App {
-  font-family: sans-serif;
   text-align: center;
-
 }
 
 .flexStyle {
@@ -10,13 +8,24 @@
   justify-content: space-between;
   height: 98vh;
 }
-
+#root {
+  font-family: Roboto;
+}
 .button {
   cursor: pointer;
 }
-
-.chekbox{
+#Layer_1 {
   cursor: pointer;
+}
+.chekbox {
+  cursor: pointer;
+}
+
+.leftColumnElemWrapper :hover {
+  background-color: slategray;
+}
+.sort-menu-hover:hover {
+  background-color: slategray;
 }
 .leftColumn {
   width: 290px;
@@ -25,11 +34,13 @@
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  background-image: url('https://kartinkin.net/pics/uploads/posts/2022-08/1660836919_56-kartinkin-net-p-svetlo-serii-fon-dlya-saita-krasivo-60.png');
-
+  background-image: url("https://kartinkin.net/pics/uploads/posts/2022-08/1660836919_56-kartinkin-net-p-svetlo-serii-fon-dlya-saita-krasivo-60.png");
 }
-
+.sortSelectorDiv {
+  margin-top: 5px;
+}
 .rightColumn {
+  margin-left: 5px;
   width: 360px;
   border: 1px solid gray;
   border-radius: 5px;
@@ -45,12 +56,11 @@
   border-radius: 5px;
   height: 60px;
   display: flex;
-  background-image: url('https://damion.club/uploads/posts/2022-01/1642572019_74-damion-club-p-belie-foni-s-kotami-80.jpg');
+  background-image: url("https://damion.club/uploads/posts/2022-01/1642572019_74-damion-club-p-belie-foni-s-kotami-80.jpg");
   height: 60px;
   background-position: center;
   -webkit-background-size: cover;
   background-size: cover;
-
 }
 
 .headerButton {
@@ -83,7 +93,6 @@
 
 .leftColumnElemIcon {
   width: 35px;
-
 }
 
 .leftColumnElemCount {
@@ -93,17 +102,15 @@
 .leftColumnElemText {
   flex-grow: 1;
   font-size: 120%;
-
 }
 
 .leftColumnCenter {
   display: flex;
   flex-direction: column;
-
-
 }
 
 .centerColumn {
+  margin-left: 5px;
   flex-grow: 1;
 }
 
@@ -113,10 +120,17 @@
   height: 60px;
   display: flex;
   justify-content: space-between;
-  background-image: url('https://top-fon.com/uploads/posts/2022-09/1663562351_87-top-fon-com-p-svetlo-serii-fon-s-razvodami-foto-112.jpg');
-
+  background-image: url("https://top-fon.com/uploads/posts/2022-09/1663562351_87-top-fon-com-p-svetlo-serii-fon-s-razvodami-foto-112.jpg");
 }
 
+.taskNameChange {
+  margin-left: 10px;
+  width: 200px;
+  font-size: 20px;
+}
+.taskNameChangep {
+  margin-left: 15px;
+}
 .centerColumnHeaderIcon {
   width: 100px;
   align-self: center;
@@ -128,8 +142,6 @@
 .centerColumnSortDiv {
   width: 120px;
   align-self: center;
-
-
 }
 
 .rightColumnFooterButtonDiv {
@@ -145,13 +157,17 @@
 }
 
 .sortSelectorDiv {
-  height: 30px;
+  cursor: pointer;
   display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
-
+  flex-direction: row;
+  text-align: center;
+  height: 30px;
+  margin-left: auto;
+  width: 180px;
 }
-
+#checkbox-2 {
+  margin-left: 40px;
+}
 .addTaskDivInCenterColumn {
   display: flex;
   flex-direction: column;
@@ -160,7 +176,7 @@
   border-radius: 5px;
   height: 22%;
   display: flex;
-  background-image: url('https://brest.mil.ru/images/tild3635-6434-4361-a139-363666393361__--1.jpg');
+  background-image: url("https://brest.mil.ru/images/tild3635-6434-4361-a139-363666393361__--1.jpg");
 }
 
 .centerElem {
@@ -183,7 +199,7 @@
 }
 
 .centerElemCount {
-  margin-left: .85em;
+  margin-left: 0.85em;
 }
 
 .centerElem-taskCard {
@@ -191,14 +207,16 @@
   display: flex;
   width: 80%;
 }
-
+#main-input {
+  font-size: 20px;
+}
 .taskCard {
   display: flex;
   align-items: baseline;
   padding: 8px 8px;
 }
 
-.tasks{
+.tasks {
   width: 90%;
   display: flex;
   margin: 10px;
@@ -207,51 +225,57 @@
   border-radius: 5px;
 }
 
-.desc{
+.desc {
   margin-left: 5px;
   margin-right: 5px;
   width: 260px;
   cursor: pointer;
 }
 
-.subDesc{
+.subDesc {
   display: flex;
   margin-left: 5px;
-  width: 300px;
+  width: 400px;
 }
-
+.subDesc-desc {
+  margin: 3px;
+  padding: 8px;
+  border: #696969 1px solid;
+  border-radius: 9px;
+}
 .custom-btn {
   width: 130px;
   height: 40px;
   color: #fff;
   border-radius: 5px;
   padding: 10px 25px;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: 500;
   background: transparent;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
   display: inline-block;
-  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
-    7px 7px 20px 0px rgba(0, 0, 0, .1),
-    4px 4px 5px 0px rgba(0, 0, 0, .1);
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
   outline: none;
 }
 
-.Layer_1{
+.Layer_1 {
   cursor: pointer;
 }
 
 .btn-6 {
-  background: radial-gradient(circle, rgba(220,220,220, 1) 0%, rgba(229,228,226, 1) 100%);
+  background: radial-gradient(
+    circle,
+    rgba(220, 220, 220, 1) 0%,
+    rgba(229, 228, 226, 1) 100%
+  );
   line-height: 42px;
   padding: 0;
   border: none;
   color: black;
 }
-
-
 
 .btn-6 span {
   position: relative;
@@ -266,11 +290,9 @@
   content: "";
   height: 0%;
   width: 1px;
-  box-shadow:
-    -1px -1px 20px 0px rgba(255, 255, 255, 1),
+  box-shadow: -1px -1px 20px 0px rgba(255, 255, 255, 1),
     -4px -4px 5px 0px rgba(255, 255, 255, 1),
-    7px 7px 20px 0px rgba(0, 0, 0, .4),
-    4px 4px 5px 0px rgba(0, 0, 0, .3);
+    7px 7px 20px 0px rgba(0, 0, 0, 0.4), 4px 4px 5px 0px rgba(0, 0, 0, 0.3);
 }
 
 .btn-6:before {
@@ -305,18 +327,16 @@
 .btn-6 span:after {
   position: absolute;
   content: "";
-  box-shadow:
-    -1px -1px 20px 0px rgba(255, 255, 255, 1),
+  box-shadow: -1px -1px 20px 0px rgba(255, 255, 255, 1),
     -4px -4px 5px 0px rgba(255, 255, 255, 1),
-    7px 7px 20px 0px rgba(0, 0, 0, .4),
-    4px 4px 5px 0px rgba(0, 0, 0, .3);
+    7px 7px 20px 0px rgba(0, 0, 0, 0.4), 4px 4px 5px 0px rgba(0, 0, 0, 0.3);
 }
 
 .btn-6 span:before {
   left: 0;
   top: 0;
   width: 0%;
-  height: .5px;
+  height: 0.5px;
   transition: all 500ms ease;
 }
 
@@ -324,7 +344,7 @@
   right: 0;
   bottom: 0;
   width: 0%;
-  height: .5px;
+  height: 0.5px;
   transition: all 500ms ease;
 }
 
@@ -341,9 +361,8 @@
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
-  border: 2px solid #2F4F4F;
+  border: 2px solid #2f4f4f;
   border-radius: 5px;
-
 }
 
 .data-1 {
@@ -353,7 +372,6 @@
   font-weight: bold;
   padding: 1px 9px 1px 20px;
   width: 100%;
-
 }
 
 .h {
