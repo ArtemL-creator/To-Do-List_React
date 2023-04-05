@@ -36,7 +36,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-image: url('https://kartinkin.net/pics/uploads/posts/2022-08/1660836919_56-kartinkin-net-p-svetlo-serii-fon-dlya-saita-krasivo-60.png');
+  background-size: cover;
+  background-image: url('https://catherineasquithgallery.com/uploads/posts/2023-01/1674269152_catherineasquithgallery-com-p-svetlo-serii-fon-s-razvodami-foto-48.jpg');
 }
 
 .header {
