@@ -40,6 +40,7 @@
   margin-top: 5px;
 }
 .rightColumn {
+  padding-top: 11px;
   margin-left: 5px;
   width: 360px;
   border: 1px solid gray;
@@ -174,7 +175,7 @@
   align-items: center;
   border: 1px solid gray;
   border-radius: 5px;
-  height: 22%;
+  height: 30%;
   display: flex;
   background-image: url("https://brest.mil.ru/images/tild3635-6434-4361-a139-363666393361__--1.jpg");
 }
